@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Pineda | Gestión Estratégica & Inteligencia Artificial</title>
+    <meta name="description"
+        content="Mauricio Pineda: Director de Proyectos y Lead AI Developer. Cerrando la brecha entre el impacto social y la eficiencia tecnológica. Experto en Agentes de IA y n8n.">
+
+    <!-- Open Graph / UI Tags -->
+    <meta property="og:title" content="Mauricio Pineda | Estrategia + IA">
+    <meta property="og:description"
+        content="Experto en Gestión Estratégica y Tecnología de IA Avanzada. Visión gerencial con ROI técnico.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauriciopineda.com">
+    <meta property="og:image" content="https://mauriciopineda.com/og-image.jpg"> <!-- Placeholder for future image -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <!-- Three.js (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mauricio Pineda",
+      "jobTitle": "Lead AI Developer & Project Director",
+      "url": "https://mauriciopineda.com",
+      "sameAs": [
+        "https://github.com/mauriciop-dev",
+        "https://www.youtube.com/@ProdigCo"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Strategic Management", "n8n", "Python", "Social Impact", "Project Management"]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Three.js Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Content Overlay -->
+    <div id="lights-off-overlay" class="hidden"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <h1>Mauricio Pineda: Gestión Estratégica + <span class="highlight">Inteligencia Artificial</span></h1>
+                <p class="subtitle">Director de Proyectos y Desarrollador con más de 20 años de experiencia cerrando la
+                    brecha entre el impacto social y la eficiencia tecnológica.</p>
+                <a href="https://www.youtube.com/playlist?list=PLZpew2anlyAm-ZciIo-HHnmaB1iCwIqZA" target="_blank"
+                    class="btn-primary" rel="noopener noreferrer">Ver Portafolio en YouTube</a>
+            </div>
+        </section>
+
+        <!-- Two Worlds Section -->
+        <section id="two-worlds">
+            <div class="container">
+                <h2>Lo mejor de dos mundos</h2>
+                <div class="grid-2">
+                    <div class="card social-impact">
+                        <h3>Gestión Social y Empresarial Estratégica</h3>
+                        <p>Liderazgo comprobado en más de <strong>1,395 actividades</strong> y proyectos de alto impacto
+                            en zonas de conflicto como Catatumbo y Arauca.</p>
+                        <p class="meta">Colaboración con USAID y MSI.</p>
+                        <a href="https://mauriciopineda.com/CV_Proyectos.pdf" target="_blank" class="cv-link">CV
+                            Proyectos</a>
+                    </div>
+                    <div class="card tech-leadership">
+                        <h3>Liderazgo Tecnológico & IA</h3>
+                        <p>Lead AI Developer y fundador de <strong>ProDig</strong>. Especialista en la creación de
+                            agentes autónomos y automatización avanzada con n8n.</p>
+                        <p class="meta">Visión gerencial del código.</p>
+                        <a href="https://mauriciopineda.com/CV_IA.pdf" target="_blank" class="cv-link">CV IA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Proyectos Destacados</h2>
+                <p class="section-intro">Selecciona un proyecto para enfocar la experiencia.</p>
+
+                <div class="gallery-container-relative">
+                    <button class="nav-arrow prev" aria-label="Anterior">&#10094;</button>
+
+                    <div class="gallery-scroll">
+                        <!-- Video 1: PAIC -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=3-J-PLlD-VA" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/3-J-PLlD-VA/maxresdefault.jpg" alt="PAIC">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>PAIC: Administración Residencial IA</h4>
+                        </div>
+
+                        <!-- Video 2: Cualificación -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=zPRbOwzHb0o" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/zPRbOwzHb0o/maxresdefault.jpg" alt="Cualificación">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>Cualificación de Leads</h4>
+                        </div>
+
+                        <!-- Video 3: Multiagentes -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=Cucz3md15JE" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/Cucz3md15JE/maxresdefault.jpg" alt="Multiagentes">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>Sistemas Multiagentes</h4>
+                        </div>
+
+                        <!-- Video 4: Salud Mental -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=aDMhUyYTk6I" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/aDMhUyYTk6I/maxresdefault.jpg" alt="Salud Mental">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>Salud Mental con IA</h4>
+                        </div>
+
+                        <!-- Video 5: Inventarios -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=ZfyVLrZ1P-U" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/ZfyVLrZ1P-U/maxresdefault.jpg" alt="Inventarios">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>Inventarios en Tiempo Real</h4>
+                        </div>
+
+                        <!-- Video 6: Automatización -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=YN8J_kMOTLk" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/YN8J_kMOTLk/maxresdefault.jpg"
+                                    alt="Automatización">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>Automatización Corporativa</h4>
+                        </div>
+
+                        <!-- Video 7: Análisis -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=whJl98S8OVE" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/whJl98S8OVE/maxresdefault.jpg" alt="Análisis">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>Análisis Predictivo</h4>
+                        </div>
+
+                        <!-- Video 8: Chatbots -->
+                        <div class="video-card">
+                            <a href="https://www.youtube.com/watch?v=FUKkVi8hFzI" class="glightbox video-wrapper">
+                                <img src="https://img.youtube.com/vi/FUKkVi8hFzI/maxresdefault.jpg" alt="Chatbots">
+                                <div class="play-icon"></div>
+                            </a>
+                            <h4>ChatBots Avanzados</h4>
+                        </div>
+                    </div>
+
+                    <button class="nav-arrow next" aria-label="Siguiente">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Stack & Certifications -->
+        <section id="stack">
+            <div class="container">
+                <h2>Stack Técnico & Certificaciones</h2>
+
+                <div class="tech-grid">
+                    <div class="tech-item">Python</div>
+                    <div class="tech-item">N8N (Expert)</div>
+                    <div class="tech-item">Gemini API</div>
+                    <div class="tech-item">Multiagents</div>
+                    <div class="tech-item">Power Platform</div>
+                </div>
+
+                <div class="certs-list">
+                    <div class="cert-badge">Platzi: Marca Personal</div>
+                    <div class="cert-badge">Platzi: IA Strategy</div>
+                    <div class="cert-badge">Platzi: Arquitectura Software</div>
+                    <div class="cert-badge">Platzi: English B1</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem -->
+        <section id="ecosystem">
+            <div class="container">
+                <h2>Ecosistema Digital</h2>
+                <div class="grid-4">
+                    <a href="https://aiprodig.com" class="ecosystem-card">
+                        <h3>ProDig</h3>
+                        <p>Transformación empresarial inteligente</p>
+                    </a>
+                    <a href="https://materiaprogramable.com" class="ecosystem-card">
+                        <h3>Materia Programable</h3>
+                        <p>Blog de investigación tecnológica</p>
+                    </a>
+                    <a href="https://publicpostco.blogspot.com/" class="ecosystem-card">
+                        <h3>Public Post</h3>
+                        <p>Opinión sobre paz y democracia</p>
+                    </a>
+                    <a href="https://github.com/mauriciop-dev" target="_blank" class="ecosystem-card">
+                        <h3>GitHub</h3>
+                        <p>Repositorios: mauriciop-dev</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Experience Section -->
+    <section id="project-experience">
+        <div class="container">
+            <h2>Experiencia en Proyectos</h2>
+            <p class="section-intro">Trayectoria en gestión de impacto social, paz desarrollo territorial.</p>
+
+            <!-- Interactive Pills -->
+            <div class="pills-nav">
+                <button class="pill-btn active" data-target="cat-territorial">Desarrollo Territorial</button>
+                <button class="pill-btn" data-target="cat-migration">Migración & Humanitaria</button>
+                <button class="pill-btn" data-target="cat-rights">DDHH & Paz</button>
+                <button class="pill-btn" data-target="cat-productive">Productivo & Cultura</button>
+                <button class="pill-btn" data-target="cat-admin">Gestión Administrativa</button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="projects-display">
+
+                <!-- Cat 1: Territorial -->
+                <div id="cat-territorial" class="project-category active">
+                    <div class="project-item">
+                        <h4>NDS-376, 379, 380, 385 (Hacarí - Catatumbo)</h4>
+                        <p>Liderazgo en la articulación técnica entre la administración municipal y comunidades rurales
+                            para el diseño, ejecución y entrega de infraestructura comunitaria, deportiva y de agua
+                            potable. Intervenciones con formación administrativa para juntas locales.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>NDS-377, 386 (El Tarra - Catatumbo)</h4>
+                        <p>Coordinación interinstitucional con la Gobernación de Norte de Santander y la Unidad para las
+                            Víctimas (UARIV) para fortalecimiento educativo y Planes Integrales de Reparación Colectiva
+                            (Filo Gringo).</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>ARA-068 (Tame - Arauca)</h4>
+                        <p>Gestión para la construcción de la "Casa Campesina" en la vereda Botalón, espacio estratégico
+                            de articulación para organizaciones sociales rurales.</p>
+                    </div>
+                </div>
+
+                <!-- Cat 2: Migration -->
+                <div id="cat-migration" class="project-category">
+                    <div class="project-item">
+                        <h4>ARA-164 y 167 (Arauca)</h4>
+                        <p>Diseño e implementación de estrategia con 8 puntos de atención al migrante y capacitación
+                            técnica a líderes venezolanos sobre rutas de acceso a salud y educación.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>ARA-170 y 173 (Arauca)</h4>
+                        <p>Coordinación de programas de inclusión educativa departamental y mejoramiento de condiciones
+                            humanitarias en el hogar de paso de San Salvador.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>ARA-178 (Arauca)</h4>
+                        <p>Fortalecimiento de capacidades productivas mediante programas de emprendimiento e inclusión
+                            económica para población migrante en frontera.</p>
+                    </div>
+                </div>
+
+                <!-- Cat 3: Rights -->
+                <div id="cat-rights" class="project-category">
+                    <div class="project-item">
+                        <h4>ARA-157, 161, 169 (Arauca)</h4>
+                        <p>Facilitación para la constitución de la Plataforma Departamental de Juventud y estrategias de
+                            empoderamiento para mujeres víctimas ("Mujeres Tejedoras de Historias").</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>ARA-050, 066, 105 (Arauca)</h4>
+                        <p>Capacitación integral en Derechos Humanos y protección a mujeres víctimas a través de
+                            dinámicas como "Tardes de Café".</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>ARA-070, 128, 129, 144 (Tame y Fortul)</h4>
+                        <p>Formación técnica en mediación de conflictos para conciliadores en equidad y comités de
+                            vivencia de Juntas de Acción Comunal.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>CIEST - Fontibón y La Candelaria</h4>
+                        <p>Coordinación de proyectos de capacitación en Derechos Humanos para población vulnerable y
+                            seguridad alimentaria para madres FAMI.</p>
+                    </div>
+                </div>
+
+                <!-- Cat 4: Productive -->
+                <div id="cat-productive" class="project-category">
+                    <div class="project-item">
+                        <h4>ARA-124, 127, 148 (Arauca)</h4>
+                        <p>Asistencia técnica para la asociación de cafeteros del piedemonte araucano y construcción de
+                            propuestas PDET junto a la ART.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>CIEST - Tunjuelito, Ciudad Bolívar y Puente Aranda</h4>
+                        <p>Dirección de proyectos para fortalecimiento de emprendimientos productivos, iniciativas
+                            culturales comunitarias e inclusión socioeconómica.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>CIEST - Secretaría de Cultura</h4>
+                        <p>Coordinación del "Primer encuentro de cultura campesina bogotana", promoviendo identidad y
+                            mercado local rural.</p>
+                    </div>
+                </div>
+
+                <!-- Cat 5: Admin -->
+                <div id="cat-admin" class="project-category">
+                    <div class="project-item">
+                        <h4>Secretaría de Hacienda de Bogotá (SHD)</h4>
+                        <p>Coordinación del proyecto SIEL, optimizando la gestión documental y digital de registros
+                            laborales.</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>ONG LPMF-11</h4>
+                        <p>Consultoría administrativo-financiera especializada en liquidación técnica de 37 contratos
+                            con fondos de desarrollo local en Bogotá.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mauricio Pineda. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Video Modal Removed (uses GLightbox now) -->
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: true
+            });
+        });
+    </script>
+</body>
+
+</html>
