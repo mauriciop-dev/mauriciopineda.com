@@ -275,56 +275,82 @@
             background: var(--md-sys-color-surface);
         }
         
-        .about-grid {
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
+        .carousel-track {
             display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
             gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-            overflow-x: auto;
-            padding: 16px 0;
-            scroll-behavior: smooth;
+            padding: 16px;
         }
         
-        .about-grid .card {
-            flex: 0 0 280px;
-            max-width: 280px;
+        .carousel-slide .card,
+        .carousel-slide .product-card,
+        .carousel-slide .gallery-img-container {
+            flex: 0 0 calc(25% - 18px);
+            max-width: calc(25% - 18px);
         }
         
-        .products-grid {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-            overflow-x: auto;
-            padding: 16px 0;
-            scroll-behavior: smooth;
+        @media (max-width: 1024px) {
+            .carousel-slide .card,
+            .carousel-slide .product-card,
+            .carousel-slide .gallery-img-container {
+                flex: 0 0 calc(50% - 12px);
+                max-width: calc(50% - 12px);
+            }
         }
         
-        .products-grid .product-card {
-            flex: 0 0 280px;
-            max-width: 280px;
+        @media (max-width: 600px) {
+            .carousel-slide .card,
+            .carousel-slide .product-card,
+            .carousel-slide .gallery-img-container {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
         
-        .gallery-grid {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            overflow-x: auto;
-            padding: 16px 0;
-            scroll-behavior: smooth;
+        .carousel-slide .card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: var(--radius-medium);
+            padding: 24px;
+            box-shadow: var(--elevation-1);
         }
         
-        .gallery-grid .gallery-img {
-            flex: 0 0 200px;
-            max-width: 200px;
+        .carousel-slide .product-card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: var(--radius-medium);
+            overflow: hidden;
+            box-shadow: var(--elevation-1);
+        }
+        
+        .carousel-slide .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .carousel-slide .gallery-img-container img {
+            width: 100%;
             height: 180px;
             object-fit: cover;
             border-radius: var(--radius-small);
             transition: transform 0.2s ease;
         }
         
-        .gallery-grid .gallery-img:hover {
+        .carousel-slide .gallery-img-container img:hover {
             transform: scale(1.02);
         }
         
@@ -355,26 +381,25 @@
             transform: scale(1.1);
         }
         
-        .carousel-container {
-            position: relative;
-            width: 100%;
-        }
-        
-        .carousel-wrapper {
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        .carousel-wrapper::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .carousel-content {
+        .carousel-dots {
             display: flex;
-            gap: 24px;
-            padding: 16px;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--md-sys-color-outline);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .carousel-dot.active {
+            background: var(--md-sys-color-primary);
         }
         
         .card {
@@ -724,24 +749,21 @@
             <h2 class="section-title">Quiénes Somos</h2>
             <p class="section-subtitle">Una alianza histórica entre comunidades indígenas Misak y campesinas</p>
             
-            <div class="carousel-container">
-                <div class="carousel-wrapper" id="about-carousel">
-                    <div class="about-grid">
+            <div class="carousel" id="about-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
                         <div class="card">
                             <h3><span class="material-symbols-rounded">groups</span> Nuestra Historia</h3>
                             <p>APROPESCA es la Asociación Gremial de Productores Acuícolas y Agrícola de Silvia, Cauca. Somos cultivadores directos de trucha arcoíris premium, eliminando intermediarios para garantizar un vínculo real entre el campo y su mesa.</p>
                         </div>
-                        
                         <div class="card">
                             <h3><span class="material-symbols-rounded">location_on</span> Origen Territorial</h3>
                             <p>Nuestra planta de procesamiento está en el Barrio Caloto, Silvia, Cauca. Combinamos la labor manual tradicional con infraestructura técnica de alto nivel para garantizar la máxima inocuidad y calidad.</p>
                         </div>
-                        
                         <div class="card">
                             <h3><span class="material-symbols-rounded">favorite</span> Impacto Social</h3>
                             <p>Al elegir Apropesca, apoyas directamente el tejido social del Cauca y el bienestar de familias indígenas y campesinas. Representamos una alianza única entre el saber ancestral Misak y el trabajo dedicado de las comunidades campesinas.</p>
                         </div>
-                        
                         <div class="card">
                             <h3><span class="material-symbols-rounded">verified</span> Calidad Certificada</h3>
                             <p>Contamos con Registro Sanitario INVIMA (RSA-0029208-2023) y el respaldo de sellos como "Colombia Destinos de Paz" y "Negocios Verdes Cauca".</p>
@@ -749,9 +771,10 @@
                     </div>
                 </div>
                 <div class="carousel-nav">
-                    <button class="carousel-btn" onclick="scrollCarousel('about-carousel', -300)">&#10094;</button>
-                    <button class="carousel-btn" onclick="scrollCarousel('about-carousel', 300)">&#10095;</button>
+                    <button class="carousel-btn" onclick="moveSlide('about-carousel', -1)">&#10094;</button>
+                    <button class="carousel-btn" onclick="moveSlide('about-carousel', 1)">&#10095;</button>
                 </div>
+                <div class="carousel-dots" id="about-carousel-dots"></div>
             </div>
         </div>
     </section>
@@ -780,9 +803,9 @@
             <h2 class="section-title">Nuestros Productos</h2>
             <p class="section-subtitle">Frescura garantizada - Empacados al vacío</p>
             
-            <div class="carousel-container">
-                <div class="carousel-wrapper" id="products-carousel">
-                    <div class="products-grid">
+            <div class="carousel" id="products-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
                         <div class="product-card">
                             <img src="Fotos/trucha_entera.jpeg" alt="Trucha Entera" class="product-img">
                             <div class="product-info">
@@ -791,7 +814,6 @@
                                 <div class="product-price">$13,000/libra</div>
                             </div>
                         </div>
-                        
                         <div class="product-card">
                             <img src="Fotos/trucha_deshuesada.jpeg" alt="Trucha Deshuesada" class="product-img">
                             <div class="product-info">
@@ -800,7 +822,6 @@
                                 <div class="product-price">$16,000/libra</div>
                             </div>
                         </div>
-                        
                         <div class="product-card">
                             <img src="Fotos/filete_trucha.jpeg" alt="Filete Premium" class="product-img">
                             <div class="product-info">
@@ -809,7 +830,6 @@
                                 <div class="product-price">$19,000/libra</div>
                             </div>
                         </div>
-                        
                         <div class="product-card">
                             <img src="Fotos/hamburguesa_trucha.jpeg" alt="Hamburguesa de Trucha" class="product-img">
                             <div class="product-info">
@@ -821,9 +841,10 @@
                     </div>
                 </div>
                 <div class="carousel-nav">
-                    <button class="carousel-btn" onclick="scrollCarousel('products-carousel', -300)">&#10094;</button>
-                    <button class="carousel-btn" onclick="scrollCarousel('products-carousel', 300)">&#10095;</button>
+                    <button class="carousel-btn" onclick="moveSlide('products-carousel', -1)">&#10094;</button>
+                    <button class="carousel-btn" onclick="moveSlide('products-carousel', 1)">&#10095;</button>
                 </div>
+                <div class="carousel-dots" id="products-carousel-dots"></div>
             </div>
         </div>
     </section>
@@ -925,23 +946,42 @@
     <section class="gallery">
         <div class="container">
             <h2 class="section-title">Galería</h2>
-            <div class="carousel-container">
-                <div class="carousel-wrapper" id="gallery-carousel">
-                    <div class="gallery-grid">
-                        <img src="Fotos/Personas_apropesca.jpeg" alt="Comunidad Apropesca" class="gallery-img">
-                        <img src="Fotos/comunidad_misak_apropesca.jpeg" alt="Comunidad Misak" class="gallery-img">
-                        <img src="Fotos/planta_proceso.jpeg" alt="Planta de Proceso" class="gallery-img">
-                        <img src="Fotos/planta_proceso_2.jpeg" alt="Planta de Proceso 2" class="gallery-img">
-                        <img src="Fotos/planta_proceso_3.jpeg" alt="Planta de Proceso 3" class="gallery-img">
-                        <img src="Fotos/trucha_calidad.jpeg" alt="Control de Calidad" class="gallery-img">
-                        <img src="Fotos/beneficios_comer_trucha.jpeg" alt="Beneficios" class="gallery-img">
-                        <img src="Fotos/trucha_congelada.jpeg" alt="Trucha Congelada" class="gallery-img">
+            <div class="carousel" id="gallery-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <div class="gallery-img-container">
+                            <img src="Fotos/Personas_apropesca.jpeg" alt="Comunidad Apropesca">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="Fotos/comunidad_misak_apropesca.jpeg" alt="Comunidad Misak">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="Fotos/planta_proceso.jpeg" alt="Planta de Proceso">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="Fotos/planta_proceso_2.jpeg" alt="Planta de Proceso 2">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="gallery-img-container">
+                            <img src="Fotos/planta_proceso_3.jpeg" alt="Planta de Proceso 3">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="Fotos/trucha_calidad.jpeg" alt="Control de Calidad">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="Fotos/beneficios_comer_trucha.jpeg" alt="Beneficios">
+                        </div>
+                        <div class="gallery-img-container">
+                            <img src="Fotos/trucha_congelada.jpeg" alt="Trucha Congelada">
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-nav">
-                    <button class="carousel-btn" onclick="scrollCarousel('gallery-carousel', -250)">&#10094;</button>
-                    <button class="carousel-btn" onclick="scrollCarousel('gallery-carousel', 250)">&#10095;</button>
+                    <button class="carousel-btn" onclick="moveSlide('gallery-carousel', -1)">&#10094;</button>
+                    <button class="carousel-btn" onclick="moveSlide('gallery-carousel', 1)">&#10095;</button>
                 </div>
+                <div class="carousel-dots" id="gallery-carousel-dots"></div>
             </div>
         </div>
     </section>
@@ -995,12 +1035,68 @@
     </a>
     
     <script>
-        function scrollCarousel(carouselId, scrollAmount) {
-            const carousel = document.getElementById(carouselId);
-            carousel.scrollBy({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
+        const carousels = {};
+        
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const id = carousel.id;
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dotsContainer = document.getElementById(id + '-dots');
+            
+            carousels[id] = {
+                currentSlide: 0,
+                totalSlides: slides.length,
+                track: track
+            };
+            
+            if (dotsContainer && slides.length > 1) {
+                for (let i = 0; i < slides.length; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                    dot.onclick = () => goToSlide(id, i);
+                    dotsContainer.appendChild(dot);
+                }
+            }
+            
+            updateCarousel(id);
+        });
+        
+        function moveSlide(carouselId, direction) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+            
+            carousel.currentSlide += direction;
+            
+            if (carousel.currentSlide < 0) {
+                carousel.currentSlide = carousel.totalSlides - 1;
+            } else if (carousel.currentSlide >= carousel.totalSlides) {
+                carousel.currentSlide = 0;
+            }
+            
+            updateCarousel(carouselId);
+        }
+        
+        function goToSlide(carouselId, slideIndex) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+            
+            carousel.currentSlide = slideIndex;
+            updateCarousel(carouselId);
+        }
+        
+        function updateCarousel(carouselId) {
+            const carousel = carousels[carouselId];
+            if (!carousel) return;
+            
+            carousel.track.style.transform = `translateX(-${carousel.currentSlide * 100}%)`;
+            
+            const dotsContainer = document.getElementById(carouselId + '-dots');
+            if (dotsContainer) {
+                const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === carousel.currentSlide);
+                });
+            }
         }
         
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
