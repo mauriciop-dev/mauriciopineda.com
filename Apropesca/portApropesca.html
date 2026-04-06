@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APROPESCA - Trucha Arcoíris Premium de Silvia, Cauca</title>
+    <meta name="description" content="APROPESCA: Asociación Gremial de Productores Acuícolas de Silvia, Cauca. Trucha arcoíris premium con registro INVIMA y sellos de calidad.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+    
+    <style>
+        :root {
+            --md-sys-color-primary: #1B5E20;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-primary-container: #A5D6A7;
+            --md-sys-color-on-primary-container: #002204;
+            --md-sys-color-secondary: #4E6352;
+            --md-sys-color-on-secondary: #FFFFFF;
+            --md-sys-color-secondary-container: #D0E8D1;
+            --md-sys-color-on-secondary-container: #0C1F12;
+            --md-sys-color-tertiary: #386567;
+            --md-sys-color-on-tertiary: #FFFFFF;
+            --md-sys-color-tertiary-container: #BBEBEC;
+            --md-sys-color-on-tertiary-container: #002020;
+            --md-sys-color-surface: #FDFDF5;
+            --md-sys-color-on-surface: #1A1C19;
+            --md-sys-color-surface-variant: #DEE5D9;
+            --md-sys-color-on-surface-variant: #424940;
+            --md-sys-color-outline: #727970;
+            --md-sys-color-error: #BA1A1A;
+            --md-sys-color-on-error: #FFFFFF;
+            --elevation-1: 0 1px 3px 1px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.3);
+            --elevation-2: 0 2px 6px 2px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.3);
+            --elevation-3: 0 4px 10px 3px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.3);
+            --radius-small: 12px;
+            --radius-medium: 16px;
+            --radius-large: 28px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, #2E7D32 100%);
+            color: var(--md-sys-color-on-primary);
+            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--md-sys-color-on-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            font-weight: 300;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.15);
+            color: var(--md-sys-color-on-primary);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-large);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        
+        .hero {
+            background: linear-gradient(180deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-primary-container) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 200px;
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .hero .tagline {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: var(--radius-large);
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--md-sys-color-on-primary);
+            color: var(--md-sys-color-primary);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--elevation-2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: var(--md-sys-color-on-primary);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .hero-images {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-img {
+            width: 280px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--radius-medium);
+            box-shadow: var(--elevation-3);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--elevation-3);
+            z-index: 1000;
+            transition: transform 0.2s ease;
+        }
+        
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+        }
+        
+        .floating-whatsapp .material-symbols-rounded {
+            font-size: 28px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--md-sys-color-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            text-align: center;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-bottom: 48px;
+        }
+        
+        .about {
+            background: var(--md-sys-color-surface);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: var(--radius-medium);
+            padding: 24px;
+            box-shadow: var(--elevation-1);
+        }
+        
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--md-sys-color-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card .material-symbols-rounded {
+            font-size: 24px;
+            color: var(--md-sys-color-secondary);
+        }
+        
+        .certifications {
+            background: var(--md-sys-color-secondary-container);
+        }
+        
+        .cert-badges {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cert-badge {
+            background: white;
+            padding: 16px 24px;
+            border-radius: var(--radius-medium);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--elevation-1);
+        }
+        
+        .cert-badge img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        .cert-badge span {
+            font-weight: 500;
+            color: var(--md-sys-color-on-surface);
+        }
+        
+        .products {
+            background: var(--md-sys-color-surface);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .product-card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline);
+            border-radius: var(--radius-medium);
+            overflow: hidden;
+            box-shadow: var(--elevation-1);
+            transition: all 0.2s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--elevation-2);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .product-info p {
+            font-size: 14px;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-bottom: 12px;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+        }
+        
+        .prices-table {
+            background: var(--md-sys-color-secondary-container);
+        }
+        
+        .table-container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--radius-medium);
+            overflow: hidden;
+            box-shadow: var(--elevation-1);
+        }
+        
+        th, td {
+            padding: 16px 24px;
+            text-align: left;
+        }
+        
+        th {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            font-weight: 600;
+        }
+        
+        td {
+            border-bottom: 1px solid var(--md-sys-color-surface-variant);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .price-highlight {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+        }
+        
+        .process {
+            background: var(--md-sys-color-surface);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 24px;
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+        
+        .process-step h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .process-step p {
+            font-size: 14px;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+        
+        .gallery {
+            background: var(--md-sys-color-surface-variant);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: var(--radius-small);
+            transition: transform 0.2s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .contact {
+            background: linear-gradient(180deg, var(--md-sys-color-surface) 0%, var(--md-sys-color-secondary-container) 100%);
+            text-align: center;
+        }
+        
+        .contact-options {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 24px;
+            border-radius: var(--radius-medium);
+            box-shadow: var(--elevation-1);
+            min-width: 280px;
+        }
+        
+        .contact-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--md-sys-color-secondary);
+        }
+        
+        .contact-card p {
+            font-size: 14px;
+        }
+        
+        .contact-card img {
+            max-width: 200px;
+            margin-top: 12px;
+            border-radius: var(--radius-small);
+        }
+        
+        footer {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            padding: 32px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .download-brochure {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--md-sys-color-on-primary);
+            text-decoration: none;
+            margin-top: 16px;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+        
+        .download-brochure:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero .tagline {
+                font-size: 18px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-img {
+                width: 100%;
+                max-width: 320px;
+                height: 160px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            section {
+                padding: 48px 0;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🐟</div>
+                    <div>
+                        <h1>APROPESCA</h1>
+                        <span>Asociación Gremial de Productores Acuícolas</span>
+                    </div>
+                </div>
+                <nav class="nav-links">
+                    <button class="nav-btn" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Quiénes Somos</button>
+                    <button class="nav-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Productos</button>
+                    <button class="nav-btn" onclick="document.getElementById('prices').scrollIntoView({behavior: 'smooth'})">Precios</button>
+                    <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contacto</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>🐟 El Sabor de Mi Trucha Caucana</h2>
+            <p class="tagline">Trucha arcoíris premium cultivada en Silvia, Cauca. Manos tradicionales, estándares modernos.</p>
+            
+            <div class="hero-cta">
+                <a href="https://wa.me/573144897092" class="btn btn-primary">
+                    <span class="material-symbols-rounded">chat</span>
+                    Pedir por WhatsApp
+                </a>
+                <a href="#prices" class="btn btn-secondary">Ver Precios</a>
+            </div>
+            
+            <div class="hero-images">
+                <img src="Fotos/trucha_entera.jpeg" alt="Trucha Entera" class="hero-img">
+                <img src="Fotos/filete_trucha.jpeg" alt="Filete de Trucha" class="hero-img">
+                <img src="Fotos/planta_apropesca.jpeg" alt="Planta Apropesca" class="hero-img">
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <p class="section-subtitle">Una alianza histórica entre comunidades indígenas Misak y campesinas</p>
+            
+            <div class="about-grid">
+                <div class="card">
+                    <h3><span class="material-symbols-rounded">groups</span> Nuestra Historia</h3>
+                    <p>APROPESCA es la Asociación Gremial de Productores Acuícolas y Agrícola de Silvia, Cauca. Somos cultivadores directos de trucha arcoíris premium, eliminando intermediarios para garantizar un vínculo real entre el campo y su mesa.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="material-symbols-rounded">location_on</span> Origen Territorial</h3>
+                    <p>Nuestra planta de procesamiento está en el Barrio Caloto, Silvia, Cauca. Combinamos la labor manual tradicional con infraestructura técnica de alto nivel para garantizar la máxima inocuidad y calidad.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="material-symbols-rounded">favorite</span> Impacto Social</h3>
+                    <p>Al elegir Apropesca, apoyas directamente el tejido social del Cauca y el bienestar de familias indígenas y campesinas. Representamos una alianza única entre el saber ancestral Misak y el trabajo dedicado de las comunidades campesinas.</p>
+                </div>
+                
+                <div class="card">
+                    <h3><span class="material-symbols-rounded">verified</span> Calidad Certificada</h3>
+                    <p>Contamos con Registro Sanitario INVIMA (RSA-0029208-2023) y el respaldo de sellos como "Colombia Destinos de Paz" y "Negocios Verdes Cauca".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certificaciones</h2>
+            <div class="cert-badges">
+                <div class="cert-badge">
+                    <img src="Fotos/sello_colombia_destinos_de_paz.png" alt="Colombia Destinos de Paz">
+                    <span>Colombia Destinos de Paz</span>
+                </div>
+                <div class="cert-badge">
+                    <img src="Fotos/sello_negocios_verdes.jpeg" alt="Negocios Verdes">
+                    <span>Negocios Verdes Cauca</span>
+                </div>
+                <div class="cert-badge">
+                    <span style="font-size: 14px;">INVIMA<br>RSA-0029208-2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Frescura garantizada - Empacados al vacío</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="Fotos/trucha_entera.jpeg" alt="Trucha Entera" class="product-img">
+                    <div class="product-info">
+                        <h3>Trucha Entera</h3>
+                        <p>Empacada al vacío, fresca y lista para preparar</p>
+                        <div class="product-price">$13,000/libra</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Fotos/trucha_deshuesada.jpeg" alt="Trucha Deshuesada" class="product-img">
+                    <div class="product-info">
+                        <h3>Trucha Deshuesada (Mariposa)</h3>
+                        <p>Corte mariposa, entre 300 a 500 gramos</p>
+                        <div class="product-price">$16,000/libra</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Fotos/filete_trucha.jpeg" alt="Filete Premium" class="product-img">
+                    <div class="product-info">
+                        <h3>Filete Premium</h3>
+                        <p>El corte más selecto para alta cocina</p>
+                        <div class="product-price">$19,000/libra</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="Fotos/hamburguesa_trucha.jpeg" alt="Hamburguesa de Trucha" class="product-img">
+                    <div class="product-info">
+                        <h3>Hamburguesa de Trucha</h3>
+                        <p>Practica opción - 4 unidades</p>
+                        <div class="product-price">$12,000/paquete</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="prices" class="prices-table">
+        <div class="container">
+            <h2 class="section-title">Tabla de Precios</h2>
+            <p class="section-subtitle">Precios puestos en Cali</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Presentación</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trucha Entera</td>
+                            <td>Empacada al vacío</td>
+                            <td class="price-highlight">$13,000/libra</td>
+                        </tr>
+                        <tr>
+                            <td>Trucha Entera</td>
+                            <td>Por kilo (aprox. 3 truchas)</td>
+                            <td class="price-highlight">$21,000/kilo</td>
+                        </tr>
+                        <tr>
+                            <td>Trucha Deshuesada</td>
+                            <td>Corte mariposa (300-500g)</td>
+                            <td class="price-highlight">$16,000/libra</td>
+                        </tr>
+                        <tr>
+                            <td>Filete de Trucha</td>
+                            <td>Premium</td>
+                            <td class="price-highlight">$19,000/libra</td>
+                        </tr>
+                        <tr>
+                            <td>Trucha Ahumada</td>
+                            <td>Especialidad</td>
+                            <td class="price-highlight">$18,000/libra</td>
+                        </tr>
+                        <tr>
+                            <td>Nuggets de Trucha</td>
+                            <td>10 unidades</td>
+                            <td class="price-highlight">$12,000/paquete</td>
+                        </tr>
+                        <tr>
+                            <td>Hamburguesa de Trucha</td>
+                            <td>4 unidades</td>
+                            <td class="price-highlight">$12,000/paquete</td>
+                        </tr>
+                        <tr>
+                            <td>Pulpa de Trucha</td>
+                            <td>Carne molida</td>
+                            <td class="price-highlight">$13,000/libra</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">La Anatomía de la Frescura</h2>
+            <p class="section-subtitle">Nuestro proceso de calidad medible</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Cosecha Controlada</h3>
+                    <p>Monitoreo digital de temperatura desde la cosecha</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Choque Térmico</h3>
+                    <p>Camas de hielo triturado inmediatamente después de la cosecha</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Evaluación Visual</h3>
+                    <p>Colorimetría estricta para garantizar el tono salmón característico</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Empaque al Vacío</h3>
+                    <p>Sellado para maximizar vida útil y preservar textura</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galería</h2>
+            <div class="gallery-grid">
+                <img src="Fotos/Personas_apropesca.jpeg" alt="Comunidad Apropesca" class="gallery-img">
+                <img src="Fotos/comunidad_misak_apropesca.jpeg" alt="Comunidad Misak" class="gallery-img">
+                <img src="Fotos/planta_proceso.jpeg" alt="Planta de Proceso" class="gallery-img">
+                <img src="Fotos/planta_proceso_2.jpeg" alt="Planta de Proceso 2" class="gallery-img">
+                <img src="Fotos/planta_proceso_3.jpeg" alt="Planta de Proceso 3" class="gallery-img">
+                <img src="Fotos/trucha_calidad.jpeg" alt="Control de Calidad" class="gallery-img">
+                <img src="Fotos/beneficios_comer_trucha.jpeg" alt="Beneficios" class="gallery-img">
+                <img src="Fotos/trucha_congelada.jpeg" alt="Trucha Congelada" class="gallery-img">
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contáctenos</h2>
+            <p class="section-subtitle">¡Haz tu pedido ahora!</p>
+            
+            <div class="contact-options">
+                <div class="contact-card">
+                    <h4>📱 WhatsApp</h4>
+                    <p>314 489 7092</p>
+                    <a href="https://wa.me/573144897092" class="btn btn-primary" style="margin-top: 12px; display: inline-block;">
+                        <span class="material-symbols-rounded">chat</span>
+                        Escribir
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>💳 Medios de Pago</h4>
+                    <p>Transferencia a cuentas corrientes<br>de Davivienda o Bancolombia</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>📍 Ubicación</h4>
+                    <p>Planta de procesamiento:<br>Barrio Caloto, Silvia, Cauca</p>
+                </div>
+            </div>
+            
+            <a href="Brochure%20Apropesca.pdf" download class="btn btn-primary" style="margin-top: 32px;">
+                <span class="material-symbols-rounded">download</span>
+                Descargar Brochure
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 APROPESCA - Asociación Gremial de Productores Acuícolas de Silvia, Cauca</p>
+            <p style="margin-top: 8px; opacity: 0.8;">🐟 El sabor de mi trucha caucana</p>
+            <a href="https://mauriciopineda.com" class="download-brochure">
+                <span class="material-symbols-rounded">home</span>
+                Volver al portafolio
+            </a>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/573144897092" class="floating-whatsapp" aria-label="WhatsApp">
+        <span class="material-symbols-rounded">chat</span>
+    </a>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

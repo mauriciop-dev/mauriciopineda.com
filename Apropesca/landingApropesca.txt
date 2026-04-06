@@ -1,0 +1,11 @@
+Instrucciones de diseño pagina Apropesca
+
+- crea una landignpage para apropesca
+- Estilo Material 3
+- la url debe quedar en https://mauriciopineda.com/Apropesca/portApropesca.html
+- Usa la información de la carpeta fotos
+- Usa la información del archivo Quiénes Somos.txt
+- Usa la información del archivo Tabla precios Apropesca.txt
+- Debes agregar el botón de whatsapp con mi cel 57 314 489 7092
+- el brochure debe quedar en esta dirección https://mauriciopineda.com/Apropesca/Brochure%20Apropesca.pdf
+- Diseña la landing con secciones, una de ellas debe ser la lista de precios
