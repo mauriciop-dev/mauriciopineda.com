@@ -835,19 +835,24 @@ footer {
 
 .video-wrapper {
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 16 / 9;
 }
 
 .video-wrapper img {
     width: 100%;
-    max-width: 800px;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-.play-icon {
+.video-section .play-icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -857,14 +862,16 @@ footer {
     background: rgba(26, 115, 232, 0.9);
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.play-icon::before {
+.video-section .play-icon::before {
     content: '';
     position: absolute;
-    top: 50%;
     left: 55%;
-    transform: translate(-50%, -50%);
+    transform: translate(-55%, -50%);
     border-left: 20px solid white;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
