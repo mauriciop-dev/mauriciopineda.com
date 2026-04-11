@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Pineda | Asistentes</title>
+    <meta name="description" content="Tecnologia que trabaja para usted, no al reves. automatizo el envio de correos y la gestion de agenda con comandos de voz.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <!-- Three.js (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <!-- Animated Background (CSS) -->
+    <div id="bg-canvas"></div>
+    <div class="floating-dots">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="../index.html" class="nav-link">Inicio</a>
+            <a href="../comercial/index.html" class="nav-link">Comercial</a>
+            <a href="index.html" class="nav-link active">Asistentes</a>
+            <a href="../powerbi/index.html" class="nav-link">Power BI</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn-contact" onclick="openContactModal()">Enviar correo</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seccion Superior: Hero Split -->
+        <section class="hero-split">
+            <div class="container">
+                <div class="split-content">
+                    <div class="split-visual">
+                        <a href="https://www.youtube.com/watch?v=whJl98S8OVE" class="glightbox video-wrapper video-large">
+                            <img src="https://img.youtube.com/vi/whJl98S8OVE/maxresdefault.jpg" alt="Asistente">
+                            <div class="play-icon"></div>
+                        </a>
+                    </div>
+                    <div class="split-message">
+                        <div class="card surface-variant">
+                            <h2 class="highlight-title">Tecnologia que trabaja para usted, no al reves.</h2>
+                            <p>A traves de la combinacion de IA + Automatizacion, convierto herramientas cotidianas como Telegram en potentes centros de mando operativo. Vea como automatizo el envio de correos y la gestion de agenda con comandos de voz, liberandolo a usted de la carga administrativa para que pueda dedicarse a lo que realmente importa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion Central: Servicios -->
+        <section class="services">
+            <div class="container">
+                <div class="services-grid">
+                    <a href="../comercial/index.html" class="service-card">
+                        <h3>Comercial</h3>
+                        <p>¿Busca expandir su negocio en Latinoamerica sin los costos de aprender por ensayo y error? Me pongo a su disposicion como su brazo derecho en la region.</p>
+                    </a>
+                    <a href="index.html" class="service-card">
+                        <h3>Asistente</h3>
+                        <p>¿Necesita apoyo en tareas operativas? tengo un equipo de personas listas para trabajar en ellas, ahorre tiempo y dinero y usted dediquese a lo estrategico.</p>
+                    </a>
+                    <a href="../powerbi/index.html" class="service-card">
+                        <h3>Power BI</h3>
+                        <p>¿Quiere ver en tiempo real como avanzan la operacion de su empresa? y tener herramientas que le permitan tomar decisiones empresariales basadas en datos reales?</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion Inferior: Videos -->
+        <section class="video-section">
+            <div class="container">
+                <div class="videos-row">
+                    <a href="https://www.youtube.com/watch?v=FUKkVi8hFzI&t=94s" class="glightbox video-wrapper">
+                        <img src="https://img.youtube.com/vi/FUKkVi8hFzI/maxresdefault.jpg" alt="Video 1">
+                        <div class="play-icon"></div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=zPRbOwzHb0o" class="glightbox video-wrapper">
+                        <img src="https://img.youtube.com/vi/zPRbOwzHb0o/maxresdefault.jpg" alt="Video 2">
+                        <div class="play-icon"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>+57 3144897092 | info@mauriciopineda.com | Creado por Mauricio Pineda - 2026</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/573144897092" target="_blank">
+            <span class="material-icons">chat</span>
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeContactModal()">&times;</span>
+            <h2>Enviar correo</h2>
+            <form id="contact-form" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        function openContactModal() {
+            document.getElementById('contact-modal').classList.add('active');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.remove('active');
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            alert('Mensaje enviado exitosamente!');
+            closeContactModal();
+            document.getElementById('contact-form').reset();
+        }
+
+        document.getElementById('contact-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: true
+            });
+        });
+    </script>
+</body>
+
+</html>

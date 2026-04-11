@@ -1,0 +1,12 @@
+AJUSTES
+
+el efecto de tree.js que tiene la pagina inicial de fondo, ponlo a todas las paginas completas.
+En comercial, el gif ponlo mas grande, como  un 30% o 40% mas grande
+En Comercial, resalta este titulo en negrilla y con el azul del sitio "Si su empresa está aterrizando en Colombia o LATAM, puedo ser su aliado estratégico en territorio."
+En Asistentes, el gif video de la sección superior mas grande, como  un 20% o 30% mas grande.
+En Asistentes, resalta este titulo con negrilla y con el azul del sitio "Tecnología que trabaja para usted, no al revés."
+En powerbi, revisa por que aparecen detrás del video, como si fueran imágenes que no cargaron, dice Power, quítalas.
+En powerbi el video de la sección superior, hazlo un 40% mas grande
+En powerbi, resalta este titulo con negrilla y con el azul de sitio "Su información trabaja para usted o usted para su información?"
+revisa ningún video carga, no se si sera por que no hemos subido estos archivos al repositorio de github.
+Una vez termines, sube todo a github
