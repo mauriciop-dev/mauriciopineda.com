@@ -867,15 +867,7 @@ footer {
     justify-content: center;
 }
 
-.video-section .play-icon::before {
-    content: '';
-    position: absolute;
-    left: 55%;
-    transform: translate(-55%, -50%);
-    border-left: 20px solid white;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-}
+
 
 /* Footer */
 footer {
