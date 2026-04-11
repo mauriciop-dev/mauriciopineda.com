@@ -44,6 +44,9 @@ body {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.4;
+    -webkit-animation: float-orb 20s ease-in-out infinite;
+    -moz-animation: float-orb 20s ease-in-out infinite;
+    -ms-animation: float-orb 20s ease-in-out infinite;
     animation: float-orb 20s ease-in-out infinite;
 }
 
@@ -67,15 +70,27 @@ body {
 
 @keyframes float-orb {
     0%, 100% {
+        -webkit-transform: translate(0, 0) scale(1);
+        -moz-transform: translate(0, 0) scale(1);
+        -ms-transform: translate(0, 0) scale(1);
         transform: translate(0, 0) scale(1);
     }
     25% {
+        -webkit-transform: translate(50px, 50px) scale(1.1);
+        -moz-transform: translate(50px, 50px) scale(1.1);
+        -ms-transform: translate(50px, 50px) scale(1.1);
         transform: translate(50px, 50px) scale(1.1);
     }
     50% {
+        -webkit-transform: translate(100px, 0) scale(0.95);
+        -moz-transform: translate(100px, 0) scale(0.95);
+        -ms-transform: translate(100px, 0) scale(0.95);
         transform: translate(100px, 0) scale(0.95);
     }
     75% {
+        -webkit-transform: translate(50px, -50px) scale(1.05);
+        -moz-transform: translate(50px, -50px) scale(1.05);
+        -ms-transform: translate(50px, -50px) scale(1.05);
         transform: translate(50px, -50px) scale(1.05);
     }
 }
@@ -98,6 +113,9 @@ body {
     background: #1A73E8;
     border-radius: 50%;
     opacity: 0.3;
+    -webkit-animation: float-dot 15s ease-in-out infinite;
+    -moz-animation: float-dot 15s ease-in-out infinite;
+    -ms-animation: float-dot 15s ease-in-out infinite;
     animation: float-dot 15s ease-in-out infinite;
 }
 
@@ -112,10 +130,16 @@ body {
 
 @keyframes float-dot {
     0%, 100% {
+        -webkit-transform: translateY(0) scale(1);
+        -moz-transform: translateY(0) scale(1);
+        -ms-transform: translateY(0) scale(1);
         transform: translateY(0) scale(1);
         opacity: 0.3;
     }
     50% {
+        -webkit-transform: translateY(-30px) scale(1.2);
+        -moz-transform: translateY(-30px) scale(1.2);
+        -ms-transform: translateY(-30px) scale(1.2);
         transform: translateY(-30px) scale(1.2);
         opacity: 0.5;
     }
@@ -585,11 +609,17 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
         transform: translateY(10px);
     }
 
     to {
         opacity: 1;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
         transform: translateY(0);
     }
 }
