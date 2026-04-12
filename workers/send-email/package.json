@@ -1,0 +1,16 @@
+{
+  "name": "send-email",
+  "version": "1.0.0",
+  "description": "Send email via Resend API",
+  "main": "src/index.ts",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "resend": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.2024.1.0",
+    "wrangler": "^3.80.0"
+  }
+}

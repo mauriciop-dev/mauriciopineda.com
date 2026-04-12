@@ -145,11 +145,38 @@
             document.getElementById('contact-modal').classList.remove('active');
         }
 
-        function submitForm(e) {
+        async function submitForm(e) {
             e.preventDefault();
-            alert('Mensaje enviado exitosamente!');
-            closeContactModal();
-            document.getElementById('contact-form').reset();
+            const form = e.target;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const page = 'Asistentes';
+            
+            const btn = form.querySelector('button[type="submit"]');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            
+            try {
+                const res = await fetch('https://send-email.mauriciopineda.workers.dev', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message, page })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    alert('Mensaje enviado exitosamente!');
+                    closeContactModal();
+                    form.reset();
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo enviar'));
+                }
+            } catch (err) {
+                alert('Error de conexión');
+            }
+            
+            btn.textContent = 'Enviar';
+            btn.disabled = false;
         }
 
         document.getElementById('contact-modal').addEventListener('click', function(e) {
