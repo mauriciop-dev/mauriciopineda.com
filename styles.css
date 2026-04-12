@@ -634,8 +634,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: white;
-    border-bottom: 1px solid #e0e0e0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(224, 224, 224, 0.5);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -681,7 +682,7 @@ footer {
 /* Hero Split Section */
 .hero-split {
     padding: 4rem 0;
-    background: white;
+    background: transparent;
 }
 
 .split-content {
@@ -757,7 +758,7 @@ footer {
 /* Services Grid (Central Section) */
 .services {
     padding: 4rem 0;
-    background: #fafafa;
+    background: transparent;
 }
 
 .services-grid {
@@ -798,7 +799,7 @@ footer {
 /* Video Section (Bottom Section) */
 .video-section {
     padding: 4rem 0;
-    background: white;
+    background: transparent;
     text-align: center;
 }
 
