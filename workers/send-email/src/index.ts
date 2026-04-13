@@ -6,6 +6,16 @@ interface Env {
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
+      });
+    }
+
     if (request.method !== "POST") {
       return new Response("Method not allowed", { status: 405 });
     }
@@ -31,9 +41,15 @@ export default {
         reply_to: email,
       });
 
-      return Response.json({ success: true, data: result });
+      return Response.json({ success: true, data: result }, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
     } catch (error) {
-      return Response.json({ error: error.message }, { status: 500 });
+      return Response.json({ error: error.message }, { status: 500, headers: {
+        "Access-Control-Allow-Origin": "*",
+      } });
     }
   },
 } satisfies ExportedHandler<Env>;
