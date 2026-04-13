@@ -59,17 +59,6 @@
             </div>
         </section>
 
-        <!-- Seccion Dashboard Power BI -->
-        <section class="dashboard-section">
-            <div class="container">
-                <h2>Dashboard Inventario</h2>
-                <p class="dashboard-subtitle">Movimiento de inventario entre sedes</p>
-                <div class="dashboard-container">
-                    <iframe title="2 movimiento Inventario" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=ec0f0c1d-ca1f-40ab-ae26-8ae2e0c64a3e&autoAuth=true&ctid=2ad045e8-9630-4e58-ba0e-a0a3392ea54c" frameborder="0" allowFullScreen="true"></iframe>
-                </div>
-            </div>
-        </section>
-
         <!-- Seccion Central: Servicios -->
         <section class="services">
             <div class="container">
@@ -195,6 +184,21 @@
             } catch (err) {
                 messageDiv.textContent = 'Error de conexión';
                 messageDiv.className = 'form-message error';
+            }
+            
+            btn.textContent = 'Enviar';
+            btn.disabled = false;
+        }
+                const data = await res.json();
+                if (data.success) {
+                    alert('Mensaje enviado exitosamente!');
+                    closeContactModal();
+                    form.reset();
+                } else {
+                    alert('Error: ' + (data.error || 'No se pudo enviar'));
+                }
+            } catch (err) {
+                alert('Error de conexión');
             }
             
             btn.textContent = 'Enviar';
