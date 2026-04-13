@@ -129,6 +129,7 @@
                     <label for="message">Mensaje</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
+                <div id="form-message" class="form-message"></div>
                 <button type="submit" class="btn-primary">Enviar</button>
             </form>
         </div>
@@ -148,6 +149,7 @@
         async function submitForm(e) {
             e.preventDefault();
             const form = e.target;
+            const messageDiv = document.getElementById('form-message');
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
@@ -156,6 +158,8 @@
             const btn = form.querySelector('button[type="submit"]');
             btn.textContent = 'Enviando...';
             btn.disabled = true;
+            messageDiv.textContent = '';
+            messageDiv.className = 'form-message';
             
             try {
                 const res = await fetch('https://send-email.hmauricio-pineda.workers.dev', {
@@ -163,6 +167,28 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, message, page })
                 });
+                const data = await res.json();
+                if (data.success) {
+                    messageDiv.textContent = '¡Mensaje enviado! He recibido tu comunicación y te contactaré pronto.';
+                    messageDiv.className = 'form-message success';
+                    form.reset();
+                    setTimeout(() => {
+                        closeContactModal();
+                        messageDiv.textContent = '';
+                        messageDiv.className = 'form-message';
+                    }, 3000);
+                } else {
+                    messageDiv.textContent = 'Error: ' + (data.error || 'No se pudo enviar');
+                    messageDiv.className = 'form-message error';
+                }
+            } catch (err) {
+                messageDiv.textContent = 'Error de conexión';
+                messageDiv.className = 'form-message error';
+            }
+            
+            btn.textContent = 'Enviar';
+            btn.disabled = false;
+        }
                 const data = await res.json();
                 if (data.success) {
                     alert('Mensaje enviado exitosamente!');
