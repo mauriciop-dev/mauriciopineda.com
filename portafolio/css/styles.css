@@ -192,6 +192,16 @@ h2.centered {
     padding-top: 2rem;
 }
 
+/* Stack Section */
+#stack .tech-grid,
+#stack .certs-list {
+    justify-content: center;
+}
+
+#stack .container {
+    text-align: center;
+}
+
 p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
@@ -456,6 +466,7 @@ p {
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
+    justify-content: center;
 }
 
 .tech-item {
@@ -478,6 +489,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 
 .cert-badge {
