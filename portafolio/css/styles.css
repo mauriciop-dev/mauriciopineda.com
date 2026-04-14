@@ -994,12 +994,12 @@ footer p {
 
 .whatsapp-tooltip {
     background: white;
-    padding: 10px 14px;
-    border-radius: 12px;
+    padding: 12px 16px;
+    border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -1009,19 +1009,21 @@ footer p {
 .whatsapp-tooltip::after {
     content: '';
     position: absolute;
-    right: -8px;
+    right: -10px;
     top: 50%;
     transform: translateY(-50%);
-    border-width: 8px 0 8px 8px;
+    border-width: 10px 0 10px 10px;
     border-style: solid;
     border-color: transparent transparent transparent white;
 }
 
 .whatsapp-tooltip .tooltip-photo {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;
+}
 }
 
 .whatsapp-tooltip span {
