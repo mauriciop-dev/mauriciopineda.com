@@ -1043,15 +1043,27 @@ footer p {
 }
 
 #final-video .video-wrapper {
-    max-width: 700px;
+    max-width: 100%;
     margin: 2rem auto;
+    position: relative;
 }
 
 #final-video .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#final-video .video-wrapper {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #final-video .section-intro {
