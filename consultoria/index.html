@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8fc">
+  <meta name="description" content="Mauricio Pineda. Consultoría en formulación, gestión y seguimiento de proyectos de desarrollo territorial, inclusión social, construcción de paz y transformación digital.">
+  <meta property="og:title" content="Mauricio Pineda | Consultoría en proyectos">
+  <meta property="og:description" content="Del territorio a la tecnología: experiencia en proyectos sociales, construcción de paz y transformación digital.">
+  <meta property="og:type" content="website">
+  <title>Consultoría en proyectos | Mauricio Pineda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="consultoria.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="consultoria.js" defer></script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <header class="site-nav">
+    <a class="brand" href="#inicio" aria-label="Mauricio Pineda, inicio">MP<span>.</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#servicios">Servicios</a>
+      <a class="nav-cta" href="#contacto">Hablemos de tu proyecto <span>↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> CONSULTORÍA EN PROYECTOS · COLOMBIA</p>
+        <h1>Los proyectos cambian.<br><em>El propósito permanece.</em></h1>
+        <p class="hero-lead">De la gestión cultural en Bogotá al desarrollo territorial, la construcción de paz y la transformación digital. Conecto estrategia, equipos y tecnología para convertir ideas complejas en resultados concretos.</p>
+        <div class="hero-actions">
+          <a class="button-primary" href="#trayectoria">Recorrer mi trayectoria <span>↓</span></a>
+          <a class="text-link" href="#servicios">Qué puedo aportar ↗</a>
+        </div>
+        <div class="hero-proof"><strong>20+ años</strong><span>entre gestión, territorio y tecnología</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Retrato profesional de Mauricio Pineda">
+        <div class="portrait-halo"></div><div class="portrait-ring ring-a"></div><div class="portrait-ring ring-b"></div>
+        <img class="portrait" src="assets/mauricio-recorte.png" alt="Mauricio Pineda con camisa azul, retrato profesional sin fondo" fetchpriority="high">
+        <div class="project-explorer" aria-label="Explora ejemplos de proyectos">
+          <button class="project-chip chip-culture" type="button" data-case="culture" aria-pressed="false"><span>01</span> Cultura comunitaria</button>
+          <button class="project-chip chip-poverty" type="button" data-case="poverty" aria-pressed="false"><span>02</span> Superación de pobreza</button>
+          <button class="project-chip chip-infrastructure" type="button" data-case="infrastructure" aria-pressed="false"><span>03</span> Infraestructura social</button>
+          <button class="project-chip chip-migration" type="button" data-case="migration" aria-pressed="false"><span>04</span> Migración e inclusión</button>
+          <button class="project-chip chip-peace" type="button" data-case="peace" aria-pressed="false"><span>05</span> Paz y reparación</button>
+          <button class="project-chip chip-policy" type="button" data-case="policy" aria-pressed="false"><span>06</span> Política pública</button>
+          <button class="project-chip chip-investment" type="button" data-case="investment" aria-pressed="false"><span>07</span> Obras por Impuestos</button>
+          <button class="project-chip chip-digital" type="button" data-case="digital" aria-pressed="false"><span>08</span> IA y seguimiento</button>
+        </div>
+        <div class="project-example" id="project-example" aria-live="polite" aria-atomic="true">
+          <div class="example-topline"><span class="example-pulse"></span><span id="example-category">PROYECTO DESTACADO</span><span class="example-count" id="example-count">01 / 08</span></div>
+          <h3 id="example-title">Infraestructura comunitaria en Catatumbo</h3>
+          <p class="example-place" id="example-place">Hacarí y El Tarra · Norte de Santander</p>
+          <p class="example-description" id="example-description">Articulación entre alcaldías, Gobernación, comunidades y entidades públicas para impulsar infraestructura rural, educativa, deportiva y de agua potable.</p>
+          <div class="example-tags" id="example-tags"><span>Coordinación institucional</span><span>Desarrollo territorial</span></div>
+          <p class="example-hint">Explora las etiquetas para ver ejemplos <span>↗</span></p>
+        </div>
+        <div class="portrait-caption"><span class="status-dot"></span><div><strong>Mauricio Pineda</strong><small>Gestión estratégica · Desarrollo territorial</small></div></div>
+      </div>
+      <div class="hero-index"><span>BOGOTÁ, COLOMBIA</span><span>01 — 04</span></div>
+    </section>
+
+    <section class="trajectory" id="trayectoria">
+      <div class="section-kicker">UNA TRAYECTORIA EN MOVIMIENTO <span>↓</span></div>
+      <div class="section-heading reveal"><h2>Del territorio<br>al <em>futuro.</em></h2><p>Una carrera construida en contextos distintos, con un hilo conductor: coordinar actores, resolver problemas reales y hacer que los proyectos avancen.</p></div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-marker"><span>01</span></div>
+          <div class="timeline-meta"><span>BOGOTÁ</span><span>GESTIÓN CULTURAL</span></div>
+          <div class="timeline-content"><p class="timeline-overline">Los primeros proyectos</p><h3>La cultura como punto de encuentro.</h3><p>Mi recorrido comenzó coordinando iniciativas culturales en Bogotá. Allí aprendí que un proyecto no se sostiene solo con un plan: necesita comunidad, alianzas, logística y una lectura clara del contexto.</p><div class="tag-row"><span>Articulación de actores</span><span>Gestión operativa</span><span>Participación</span></div></div>
+          <aside class="timeline-aside"><span>01</span><p>Escuchar primero.<br>Diseñar con sentido.</p></aside>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="timeline-marker"><span>02</span></div>
+          <div class="timeline-meta"><span>NORTE DE BOYACÁ · VICHADA</span><span>RED UNIDOS</span></div>
+          <div class="timeline-content"><p class="timeline-overline">Superación de pobreza extrema</p><h3>Cuando el territorio define la estrategia.</h3><p>Con la Red Unidos participé en procesos orientados a superar la pobreza extrema, trabajando con familias y actores institucionales en territorios con necesidades y capacidades muy diferentes. La experiencia fortaleció mi enfoque de gestión territorial y coordinación interinstitucional.</p><div class="tag-row"><span>Desarrollo social</span><span>Gestión territorial</span><span>Coordinación institucional</span></div></div>
+          <aside class="timeline-aside"><span>02</span><p>La solución debe<br>partir del contexto.</p></aside>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="timeline-marker"><span>03</span></div>
+          <div class="timeline-meta"><span>ARAUCA · CATATUMBO</span><span>CONSTRUCCIÓN DE PAZ</span></div>
+          <div class="timeline-content"><p class="timeline-overline">Implementación del Acuerdo de Paz</p><h3>Coordinar en escenarios complejos.</h3><p>En el programa Colombia Transforma, con USAID y MSI, acompañé iniciativas vinculadas a la implementación territorial del Acuerdo de Paz. Entre 2021 y 2025 contribuí a la estructuración y planeación de proyectos y actividades, conectando gobiernos locales, organizaciones sociales y comunidades.</p><div class="impact-stats"><div><strong>1.395</strong><span>proyectos y actividades planeados</span></div><div><strong>65</strong><span>alcaldías vinculadas</span></div><div><strong>90+</strong><span>obras de infraestructura</span></div></div><div class="tag-row"><span>Construcción de paz</span><span>Alianzas territoriales</span><span>Seguimiento</span></div></div>
+          <aside class="timeline-aside"><span>03</span><p>Convertir acuerdos<br>en acciones locales.</p></aside>
+        </article>
+        <article class="timeline-item timeline-current reveal">
+          <div class="timeline-marker"><span>04</span></div>
+          <div class="timeline-meta"><span>BOGOTÁ</span><span>2025 — ACTUALIDAD</span></div>
+          <div class="timeline-content"><p class="timeline-overline">Tecnología con propósito</p><h3>De la gestión de proyectos a diseñar soluciones digitales.</h3><p>He llevado la misma lógica de análisis, planeación y mejora continua al desarrollo tecnológico: aplicaciones web, automatización de procesos, analítica de datos y soluciones con inteligencia artificial. Hoy diseño herramientas que ayudan a organizaciones y empresas a trabajar mejor, con procesos medibles y tecnología útil.</p><div class="tag-row"><span>Automatización e IA</span><span>Power Platform</span><span>Python</span><span>Diseño de producto</span></div><a class="inline-link" href="https://github.com/mauriciop-dev" target="_blank" rel="noopener noreferrer">Explorar proyectos tecnológicos ↗</a></div>
+          <aside class="timeline-aside"><span>04</span><p>La tecnología como<br>multiplicador de impacto.</p></aside>
+        </article>
+      </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="services-inner">
+        <div class="services-heading reveal"><p class="eyebrow">CÓMO PUEDO APORTAR</p><h2>Experiencia para<br><em>hacer que pase.</em></h2><p>Una mirada integral que une dirección de proyectos, trabajo territorial y capacidad para traducir necesidades en soluciones digitales.</p></div>
+        <div class="service-list">
+          <article class="service-card reveal"><span>01</span><div><h3>Formulación y planeación</h3><p>Estructuración de iniciativas, teoría de cambio, marcos de resultados, planes de trabajo, presupuestos y gestión de riesgos.</p></div><b>↗</b></article>
+          <article class="service-card reveal"><span>02</span><div><h3>Gestión y seguimiento</h3><p>Coordinación de actores, seguimiento a indicadores, gestión de alianzas y acompañamiento a equipos en territorio.</p></div><b>↗</b></article>
+          <article class="service-card reveal"><span>03</span><div><h3>Desarrollo territorial y social</h3><p>Diseño y articulación de proyectos de inclusión, desarrollo local, participación comunitaria y construcción de paz.</p></div><b>↗</b></article>
+          <article class="service-card reveal"><span>04</span><div><h3>Transformación digital</h3><p>Automatización de procesos, tableros de control y soluciones con IA para reducir tareas manuales y mejorar decisiones.</p></div><b>↗</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <p class="eyebrow">EL SIGUIENTE CAPÍTULO</p><h2>Hablemos del<br><em>proyecto que sigue.</em></h2>
+      <p>Si necesitas estructurar una iniciativa, fortalecer su ejecución o encontrar oportunidades de mejora con tecnología, conversemos.</p>
+      <div class="contact-actions"><a class="button-primary" href="mailto:hmauricio.pineda@gmail.com?subject=Consulta%20sobre%20proyectos">Escríbeme por correo ↗</a><a class="button-primary whatsapp-link" href="https://wa.me/573144897092" target="_blank" rel="noopener noreferrer">Escríbeme por WhatsApp ↗</a><a class="text-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Conectar profesionalmente ↗</a></div>
+      <span class="contact-signature">Mauricio Pineda · Bogotá, Colombia</span>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#inicio">MP<span>.</span></a><span>Gestión estratégica con propósito.</span><a href="#inicio">Volver arriba ↑</a></footer>
+</body>
+</html>
