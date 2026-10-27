@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo degradado profesional -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f8fc"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#4388ed" flood-opacity="0.15"/>
+    </filter>
+    <clipPath id="circleClip">
+      <circle cx="300" cy="315" r="180"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle pattern -->
+  <g opacity="0.03">
+    <circle cx="1000" cy="100" r="200" fill="none" stroke="#4388ed" stroke-width="2"/>
+    <circle cx="1100" cy="500" r="150" fill="none" stroke="#4388ed" stroke-width="2"/>
+  </g>
+  
+  <!-- Foto de perfil con clip circular -->
+  <image href="me_gusta_esta_202604141851.jpeg" x="120" y="135" width="360" height="360" clip-path="url(#circleClip)" filter="url(#shadow)"/>
+  
+  <!-- Círculo de fondo detrás de la foto -->
+  <circle cx="300" cy="315" r="195" fill="white" filter="url(#shadow)"/>
+  
+  <!-- Contenido textual -->
+  <g font-family="Manrope, DM Sans, sans-serif">
+    <!-- Nombre -->
+    <text x="520" y="240" font-size="56" font-weight="800" fill="#101a2b" letter-spacing="-1.5">MAURICIO PINEDA</text>
+    
+    <!-- Título principal -->
+    <text x="520" y="300" font-size="32" font-weight="600" fill="#4388ed" letter-spacing="-0.5">Consultor Senior</text>
+    
+    <!-- Subtítulo -->
+    <text x="520" y="360" font-size="28" font-weight="500" fill="#4a5a72">
+      <tspan font-size="28">Formulación · Gestión · Desarrollo Territorial</tspan>
+    </text>
+    <text x="520" y="410" font-size="28" font-weight="500" fill="#4a5a72">
+      <tspan font-size="28">Construcción de Paz · Transformación Digital</tspan>
+    </text>
+    
+    <!-- Separador -->
+    <line x1="520" y1="460" x2="860" y2="460" stroke="#4388ed" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Ubicación y años -->
+    <text x="520" y="520" font-size="22" font-weight="600" fill="#101a2b">BOGOTÁ, COLOMBIA</text>
+    <text x="520" y="560" font-size="20" fill="#637087">20+ años de experiencia en proyectos sociales y tecnológicos</text>
+    
+    <!-- Logo MP en esquina -->
+    <g transform="translate(1000, 500)">
+      <circle cx="0" cy="0" r="45" fill="#101a2b"/>
+      <text text-anchor="middle" dominant-baseline="central" x="0" y="0" font-size="28" font-weight="800" fill="#4388ed" font-family="Manrope, sans-serif">MP</text>
+      <text text-anchor="middle" dominant-baseline="central" x="0" y="22" font-size="10" font-weight="600" fill="#4388ed" font-family="Manrope, sans-serif">.</text>
+    </g>
+  </g>
+  
+  <!-- Barra inferior con acento -->
+  <rect x="0" y="600" width="1200" height="30" fill="#4388ed"/>
+</svg>
