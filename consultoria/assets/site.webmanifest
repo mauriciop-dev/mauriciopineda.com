@@ -1,0 +1,23 @@
+{
+  "name": "Mauricio Pineda | Consultoría",
+  "short_name": "Mauricio Pineda",
+  "description": "Consultor senior en formulación y gestión de proyectos de desarrollo territorial, construcción de paz y transformación digital.",
+  "start_url": "/consultoria/",
+  "display": "standalone",
+  "background_color": "#f5f8fc",
+  "theme_color": "#f5f8fc",
+  "icons": [
+    {
+      "src": "favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

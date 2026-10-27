@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Pineda | Consultoría en Proyectos</title>
+    <meta name="description"
+        content="Consultoría en gestión de proyectos: trayectoria desde proyectos culturales en Bogotá, pobreza extrema con Red Unidos, paz en Arauca y Catatumbo, hasta tecnología en Bogotá.">
+
+    <!-- Open Graph / UI Tags -->
+    <meta property="og:title" content="Mauricio Pineda | Consultoría en Proyectos">
+    <meta property="og:description"
+        content="Trayectoria en gestión de proyectos: impacto social, paz y tecnología territorial.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauriciopineda.com/consultoria-proyectos">
+    <meta property="og:image" content="https://mauriciopineda.com/og-image.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+    <!-- Three.js (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav-menu">
+            <a href="../index.html" class="nav-link">Inicio</a>
+            <a href="../comercial/index.html" class="nav-link">Comercial</a>
+            <a href="../asistente/index.html" class="nav-link">Asistentes</a>
+            <a href="../powerbi/index.html" class="nav-link">Power BI</a>
+            <a href="index.html" class="nav-link active">Consultoría Proyectos</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn-contact" onclick="openContactModal()">Enviar correo</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Superior: Hero -->
+        <section class="hero-split">
+            <div class="container">
+                <div class="split-content">
+                    <div class="split-visual">
+                        <div class="era-badge">Etapa 1 de 4</div>
+                        <img src="../fotos/IMG_20221103_121737.jpg" alt="Consultoría Proyectos" class="hero-image-large">
+                    </div>
+                    <div class="split-message">
+                        <div class="card surface-variant">
+                            <h2 class="highlight-title">Consultoría en Gestión de Proyectos</h2>
+                            <p>Acompaño a organizaciones y entidades en el diseño, ejecución y seguimiento de proyectos
+                                de impacto social, paz y tecnología territorial. Mi recorrido abarca más de 20 años de
+                                experiencia cerrando brechas entre comunidades y la eficiencia operativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Central: Recorrido Scroll (Timeline de 4 etapas) -->
+        <section class="services" id="recorrido">
+            <div class="container">
+                <h2 style="text-align:center; margin-bottom:3rem;">Mi recorrido en proyectos</h2>
+                <p style="text-align:center; color:var(--text-secondary); max-width:700px; margin:0 auto 3rem;">
+                    Desplázate para conocer cada etapa de mi trayectoria: proyectos culturales en Bogotá, atención a la
+                    pobreza extrema con Red Unidos, construcción de paz en Arauca y Catatumbo, y proyectos de tecnología
+                    en Bogotá.
+                </p>
+
+                <div class="timeline">
+                    <!-- Etapa 1: Proyectos culturales Bogotá -->
+                    <div class="timeline-step reveal" data-era="1">
+                        <div class="step-marker">1</div>
+                        <div class="step-content">
+                            <h3>Proyectos Culturales — Bogotá</h3>
+                            <p class="step-meta">CIEST · Secretaría de Cultura de Bogotá · Localidades Tunjuelito, Ciudad
+                                Bolívar y Puente Aranda</p>
+                            <p>Dirección de proyectos para el fortalecimiento de emprendimientos productivos, iniciativas
+                                culturales comunitarias e inclusión socioeconómica. Coordinación del "Primer encuentro de
+                                cultura campesina bogotana", promoviendo la identidad y el mercado local rural.</p>
+                            <ul class="step-list">
+                                <li>Primer encuentro de cultura campesina bogotana</li>
+                                <li>Fortalecimiento de emprendimientos productivos comunitarios</li>
+                                <li>Iniciativas culturales e inclusión socioeconómica en 3 localidades</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 2: Pobreza extrema Red Unidos -->
+                    <div class="timeline-step reveal" data-era="2">
+                        <div class="step-marker">2</div>
+                        <div class="step-content">
+                            <h3>Pobreza Extrema — Norte de Boyacá y Vichada</h3>
+                            <p class="step-meta">Red Unidos · Familias en condición de pobreza extrema</p>
+                            <p>Implementación de la estrategia Red Unidos para la superación de la pobreza extrema en el
+                                norte de Boyacá y el departamento de Vichada. Acompañamiento a familias, rutas de acceso a
+                                servicios y generación de oportunidades productivas en zonas de difícil acceso.</p>
+                            <ul class="step-list">
+                                <li>Estrategia Red Unidos en Norte de Boyacá</li>
+                                <li>Intervención en Vichada con familias en pobreza extrema</li>
+                                <li>Rutas de acceso a servicios y oportunidades productivas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 3: Paz Arauca y Catatumbo -->
+                    <div class="timeline-step reveal" data-era="3">
+                        <div class="step-marker">3</div>
+                        <div class="step-content">
+                            <h3>Acuerdo de Paz — Arauca y Catatumbo</h3>
+                            <p class="step-meta">PDET · Hacarí y El Tarra (Catatumbo) · Tame, Fortul y Arauca</p>
+                            <p>Articulación técnica para la implementación del Acuerdo de Paz mediante Planes de
+                                Desarrollo con Enfoque Territorial (PDET). Construcción de infraestructura comunitaria,
+                                Casa Campesina, fortalecimiento educativo y Planes Integrales de Reparación Colectiva en
+                                zonas de conflicto.</p>
+                            <ul class="step-list">
+                                <li>PDET en Hacarí y El Tarra (Catatumbo)</li>
+                                <li>Casa Campesina en Botalón, Tame (Arauca)</li>
+                                <li>Planes Integrales de Reparación Colectiva con UARIV</li>
+                                <li>Fortalecimiento educativo y organizaciones rurales</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 4: Tecnología Bogotá -->
+                    <div class="timeline-step reveal" data-era="4">
+                        <div class="step-marker">4</div>
+                        <div class="step-content">
+                            <h3>Proyectos de Tecnología — Bogotá (Último año)</h3>
+                            <p class="step-meta">ProDig · Lead AI Developer · n8n · Agentes de IA</p>
+                            <p>En el último año he liderado proyectos de transformación tecnológica en Bogotá: desarrollo
+                                de agentes autónomos, automatización de procesos con n8n, análisis predictivo, chatbots
+                                avanzados y sistemas multiagentes. Cerrando la brecha entre el impacto social y la
+                                eficiencia tecnológica.</p>
+                            <ul class="step-list">
+                                <li>Agentes autónomos y automatización con n8n</li>
+                                <li>Análisis predictivo y chatbots avanzados</li>
+                                <li>Sistemas multiagentes e inventarios en tiempo real</li>
+                                <li>Visión gerencial del código para ROI técnico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Qué Ofrezco (Consultoría) -->
+        <section class="services">
+            <div class="container">
+                <h2 style="text-align:center; margin-bottom:3rem;">¿En qué puedo ayudarte?</h2>
+                <div class="services-grid">
+                    <a href="#" class="service-card">
+                        <h3>Diseño y Formulación de Proyectos</h3>
+                        <p>Estructuro proyectos de impacto social y tecnológico alineados a fuentes de financiación,
+                                PDET y planes de desarrollo territorial.</p>
+                    </a>
+                    <a href="#" class="service-card">
+                        <h3>Ejecución y Seguimiento Territorial</h3>
+                        <p>Acompaño la implementación en terreno, coordinando actores institucionales y comunidades en
+                                zonas de difícil acceso y conflicto.</p>
+                    </a>
+                    <a href="#" class="service-card">
+                        <h3>Transformación con IA y Automatización</h3>
+                        <p>Implemento agentes de IA y flujos con n8n para mejorar la eficiencia operativa y la toma de
+                                decisiones basada en datos.</p>
+                    </a>
+                    <a href="#" class="service-card">
+                        <h3>Mentoría en Gestión de Proyectos</h3>
+                        <p>Transferencia de conocimientos en más de 1,395 actividades y proyectos de alto impacto social
+                                y tecnológico.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Inferior: Video -->
+        <section class="video-section">
+            <div class="container">
+                <a href="https://www.youtube.com/watch?v=3-J-PLlD-VA" class="glightbox video-wrapper">
+                    <img src="https://img.youtube.com/vi/3-J-PLlD-VA/maxresdefault.jpg" alt="Video Consultoría Proyectos">
+                    <div class="play-icon"></div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>+57 3144897092 | info@mauriciopineda.com | Creado por Mauricio Pineda - 2026</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/573144897092" target="_blank">
+            <span class="material-icons">chat</span>
+            WhatsApp
+        </a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeContactModal()">&times;</span>
+            <h2>Enviar correo</h2>
+            <form id="contact-form" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div id="form-message" class="form-message"></div>
+                <button type="submit" class="btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Reveal on scroll for timeline steps
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        function openContactModal() {
+            document.getElementById('contact-modal').classList.add('active');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.remove('active');
+        }
+
+        async function submitForm(e) {
+            e.preventDefault();
+            const form = e.target;
+            const messageDiv = document.getElementById('form-message');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const page = 'Consultoría Proyectos';
+
+            const btn = form.querySelector('button[type="submit"]');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            messageDiv.textContent = '';
+            messageDiv.className = 'form-message';
+
+            try {
+                const res = await fetch('https://send-email.hmauricio-pineda.workers.dev', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, message, page })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    messageDiv.textContent = '¡Mensaje enviado! He recibido tu comunicación y te contactaré pronto.';
+                    messageDiv.className = 'form-message success';
+                    form.reset();
+                    setTimeout(() => {
+                        closeContactModal();
+                        messageDiv.textContent = '';
+                        messageDiv.className = 'form-message';
+                    }, 3000);
+                } else {
+                    messageDiv.textContent = 'Error: ' + (data.error || 'No se pudo enviar');
+                    messageDiv.className = 'form-message error';
+                }
+            } catch (err) {
+                messageDiv.textContent = 'Error de conexión';
+                messageDiv.className = 'form-message error';
+            }
+
+            btn.textContent = 'Enviar';
+            btn.disabled = false;
+        }
+
+        document.getElementById('contact-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: true
+            });
+        });
+    </script>
+</body>
+
+</html>

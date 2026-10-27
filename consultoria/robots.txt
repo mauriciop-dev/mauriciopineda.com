@@ -1,0 +1,14 @@
+# robots.txt para mauriciopineda.com/consultoria/
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mauriciopineda.com/consultoria/sitemap.xml
+
+# No indexar archivos de assets directamente (opcional)
+# Disallow: /assets/
+# Disallow: /consultoria.js
+# Disallow: /consultoria.css
+
+# Crawl-delay para bots agresivos (opcional)
+# Crawl-delay: 10
