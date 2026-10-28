@@ -1,0 +1,12 @@
+# robots.txt para mauriciopineda.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mauriciopineda.com/sitemap.xml
+
+# No indexar archivos temporales
+Disallow: /*.pdf$
+Disallow: /consultoria/assets/
+Disallow: /consultoria/consultoria.js
+Disallow: /consultoria/consultoria.css

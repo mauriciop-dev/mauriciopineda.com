@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://mauriciopineda.com/consultoria/sitemap.xml
+Sitemap: https://mauriciopineda.com/sitemap.xml
 
 # No indexar archivos de assets directamente (opcional)
 # Disallow: /assets/
