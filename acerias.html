@@ -335,15 +335,15 @@
       .author-avatar, .signature-avatar { image-rendering: -webkit-optimize-contrast; }
     }
     
-    /* Reveal animation (used by consultoria.js IntersectionObserver) */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); }
-    
-    /* Fallback: if JS fails or IntersectionObserver doesn't trigger, make visible after short delay */
-    .reveal.no-js { opacity: 1; transform: translateY(0); transition: none; }
+    /* Reveal animation (progressive enhancement) */
+    /* Default: content visible. JS adds .js-reveal-ready to enable animation */
+    .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .js-reveal-ready .reveal { opacity: 0; transform: translateY(24px); }
+    .js-reveal-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
     
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: translateY(0); transition: none; }
+      .js-reveal-ready .reveal { opacity: 1; transform: translateY(0); }
     }
 
     /* Print styles */
@@ -433,6 +433,15 @@
   </script>
 
   <title>Más allá del arancel: La reconversión estratégica en Acerías Paz del Río | Mauricio Pineda</title>
+
+  <!-- Enable reveal animation early to avoid flash -->
+  <script>
+    (function() {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-reveal-ready');
+      }
+    })();
+  </script>
 
   <script src="consultoria/consultoria.js" defer></script>
 </head>
@@ -560,26 +569,30 @@
   <!-- Reveal fallback: ensure content visible if IntersectionObserver fails -->
   <script>
     (function() {
-      const reveals = document.querySelectorAll('.reveal');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       
       if (reduceMotion) {
-        reveals.forEach(el => el.classList.add('is-visible'));
+        document.documentElement.classList.remove('js-reveal-ready');
         return;
       }
       
-      // Fallback timeout: if IntersectionObserver doesn't trigger within 1.5s, show anyway
+      // Fallback: if IntersectionObserver doesn't trigger within 2s, disable animation
       setTimeout(() => {
+        const reveals = document.querySelectorAll('.reveal');
+        let allVisible = true;
         reveals.forEach(el => {
           if (!el.classList.contains('is-visible')) {
-            el.classList.add('is-visible');
+            allVisible = false;
           }
         });
-      }, 1500);
+        if (!allVisible) {
+          document.documentElement.classList.remove('js-reveal-ready');
+        }
+      }, 2000);
       
       // Also handle case where IntersectionObserver is not supported
       if (!('IntersectionObserver' in window)) {
-        reveals.forEach(el => el.classList.add('is-visible'));
+        document.documentElement.classList.remove('js-reveal-ready');
       }
     })();
   </script>
