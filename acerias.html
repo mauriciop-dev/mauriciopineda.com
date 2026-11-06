@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8fc">
+  <meta name="description" content="Análisis estratégico sobre la reconversión de Acerías Paz del Río: seguridad nacional, soberanía industrial y benchmarks globales de transformación siderúrgica.">
+  <meta name="keywords" content="Acerías Paz del Río, industria siderúrgica Colombia, seguridad nacional, soberanía industrial, reconversión estratégica, alambrón, acero">
+  <meta name="author" content="Mauricio Pineda">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://mauriciopineda.com/acerias.html">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mauriciopineda.com/acerias.html">
+  <meta property="og:title" content="Más allá del arancel: La reconversión estratégica y la seguridad nacional en Acerías Paz del Río">
+  <meta property="og:description" content="Análisis sobre por qué la única siderúrgica integrada de Colombia es un activo de seguridad nacional y cómo las grandes siderúrgicas globales pivotaron hacia alto valor agregado.">
+  <meta property="og:image" content="https://mauriciopineda.com/consultoria/assets/og-image-final.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Mauricio Pineda — Artículos">
+  <meta property="article:author" content="Mauricio Pineda">
+  <meta property="article:published_time" content="2025-11-05">
+  <meta property="article:section" content="Análisis Estratégico">
+  <meta property="article:tag" content="Industria Siderúrgica">
+  <meta property="article:tag" content="Seguridad Nacional">
+  <meta property="article:tag" content="Soberanía Industrial">
+  <meta property="article:tag" content="Política Pública">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mauricioproject">
+  <meta name="twitter:creator" content="@mauricioproject">
+  <meta name="twitter:title" content="Más allá del arancel: La reconversión estratégica en Acerías Paz del Río">
+  <meta name="twitter:description" content="Por qué la única siderúrgica integrada de Colombia es un activo de seguridad nacional y lecciones de SSAB, Voestalpine y Nucor.">
+  <meta name="twitter:image" content="https://mauriciopineda.com/consultoria/assets/og-image-final.jpg">
+
+  <!-- DNS Prefetch / Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://wa.me" crossorigin>
+  <link rel="preconnect" href="https://www.linkedin.com" crossorigin>
+  <link rel="preconnect" href="https://github.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <!-- Preload hero image (WebP) -->
+  <link rel="preload" as="image" href="consultoria/assets/mauricio-recorte.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="consultoria/consultoria.css">
+  <style>
+    /* Article-specific styles */
+    .article-page { padding-top: 0; }
+    .article-header { 
+      min-height: 60vh; 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      align-items: end; 
+      gap: 2rem; 
+      padding: 120px clamp(22px,8vw,125px) 80px; 
+      position: relative; 
+      overflow: hidden;
+    }
+    .article-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(ellipse at 78% 16%,rgba(111,164,239,.16),transparent 33%),linear-gradient(135deg,#f7f9fc,#eef4fb 65%,#f8fafc);
+    }
+    .article-meta { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 16px; 
+      align-items: center; 
+      font-size: .8rem; 
+      color: var(--muted); 
+      letter-spacing: .08em; 
+      text-transform: uppercase; 
+    }
+    .article-meta time { font-weight: 600; color: var(--ink); }
+    .article-meta .category { 
+      background: rgba(67,136,237,.12); 
+      color: var(--blue); 
+      padding: 6px 12px; 
+      border-radius: 4px; 
+      font-weight: 600; 
+      font-size: .7rem; 
+    }
+    .article-title { 
+      max-width: 900px; 
+      font-size: clamp(2.2rem, 5vw, 3.5rem); 
+      line-height: 1.1; 
+      letter-spacing: -.04em; 
+      color: var(--ink); 
+    }
+    .article-title em { font-style: italic; color: var(--blue); }
+    .article-lead { 
+      max-width: 720px; 
+      font-size: 1.15rem; 
+      line-height: 1.7; 
+      color: var(--muted); 
+      margin-top: 1.5rem; 
+    }
+    .article-author { 
+      display: flex; 
+      align-items: center; 
+      gap: 14px; 
+      margin-top: 2.5rem; 
+      padding-top: 1.5rem; 
+      border-top: 1px solid var(--line); 
+      max-width: 720px; 
+    }
+    .author-avatar { 
+      width: 56px; 
+      height: 56px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 2px solid rgba(67,136,237,.2); 
+    }
+    .author-info { line-height: 1.3; }
+    .author-name { font: 700 1rem Manrope,sans-serif; color: var(--ink); }
+    .author-role { font-size: .82rem; color: var(--muted); }
+    
+    .article-content { 
+      max-width: 820px; 
+      margin: 0 auto; 
+      padding: 60px clamp(22px,8vw,125px) 120px; 
+      font: 400 1.05rem/1.8 'DM Sans',sans-serif; 
+      color: var(--ink); 
+    }
+    .article-content h2 { 
+      font: 700 1.9rem/1.25 Manrope,sans-serif; 
+      letter-spacing: -.03em; 
+      color: var(--ink); 
+      margin: 3.5rem 0 1.25rem; 
+      padding-bottom: .5rem; 
+      border-bottom: 2px solid var(--line); 
+    }
+    .article-content h3 { 
+      font: 700 1.35rem/1.3 Manrope,sans-serif; 
+      letter-spacing: -.02em; 
+      color: var(--ink); 
+      margin: 2.5rem 0 1rem; 
+    }
+    .article-content p { margin-bottom: 1.25rem; }
+    .article-content strong { font-weight: 600; }
+    .article-content em { font-style: italic; color: var(--ink); }
+    .article-content a { 
+      color: var(--blue); 
+      text-decoration: underline; 
+      text-underline-offset: 2px; 
+      text-decoration-thickness: 1px; 
+      transition: color .2s; 
+    }
+    .article-content a:hover { color: #245db3; }
+    .article-content ul { margin: 1.25rem 0 1.25rem 1.5rem; }
+    .article-content li { margin-bottom: .75rem; line-height: 1.7; }
+    .article-content hr { 
+      border: none; 
+      border-top: 1px solid var(--line); 
+      margin: 3rem 0; 
+    }
+    .article-content blockquote { 
+      border-left: 3px solid var(--blue); 
+      padding-left: 1.5rem; 
+      margin: 2rem 0; 
+      color: var(--muted); 
+      font-style: italic; 
+    }
+    
+    /* Author signature at bottom right */
+    .article-signature { 
+      position: relative; 
+      margin-top: 4rem; 
+      padding-top: 2.5rem; 
+      border-top: 1px solid var(--line); 
+      display: flex; 
+      justify-content: flex-end; 
+      align-items: flex-end; 
+      gap: 1.5rem; 
+    }
+    .signature-block { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: flex-end; 
+      gap: .75rem; 
+      text-align: right; 
+    }
+    .signature-avatar { 
+      width: 96px; 
+      height: 96px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 3px solid rgba(67,136,237,.15); 
+      box-shadow: 0 12px 40px rgba(33,57,91,.12); 
+      transition: transform .3s ease, box-shadow .3s ease; 
+    }
+    .signature-avatar:hover { 
+      transform: scale(1.03) rotate(-1deg); 
+      box-shadow: 0 16px 48px rgba(33,57,91,.18); 
+    }
+    .signature-name { 
+      font: 700 1.1rem Manrope,sans-serif; 
+      color: var(--ink); 
+      letter-spacing: -.02em; 
+    }
+    .signature-role { 
+      font-size: .85rem; 
+      color: var(--muted); 
+    }
+    .signature-links { 
+      display: flex; 
+      gap: 1rem; 
+      margin-top: .25rem; 
+    }
+    .signature-links a { 
+      font-size: .75rem; 
+      font-weight: 600; 
+      letter-spacing: .06em; 
+      text-transform: uppercase; 
+      color: var(--blue); 
+      text-decoration: none; 
+      transition: color .2s; 
+    }
+    .signature-links a:hover { color: #245db3; }
+    
+    /* Back to home link */
+    .article-footer { 
+      padding: 40px clamp(22px,8vw,125px); 
+      text-align: center; 
+      border-top: 1px solid var(--line); 
+      background: rgba(255,255,255,.5); 
+      backdrop-filter: blur(12px); 
+    }
+    .article-footer a { 
+      font: 600 .9rem 'DM Sans',sans-serif; 
+      color: var(--blue); 
+      text-decoration: none; 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 8px; 
+      transition: color .2s; 
+    }
+    .article-footer a:hover { color: #245db3; }
+    
+    @media (max-width: 768px) {
+      .article-header { padding: 100px 20px 60px; min-height: auto; }
+      .article-title { font-size: 2rem; }
+      .article-lead { font-size: 1.05rem; }
+      .article-content { padding: 40px 20px 80px; font-size: 1rem; }
+      .article-content h2 { font-size: 1.5rem; }
+      .article-content h3 { font-size: 1.2rem; }
+      .article-signature { flex-direction: column; align-items: flex-end; }
+      .signature-avatar { width: 72px; height: 72px; }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .signature-avatar { transition: none; }
+    }
+  </style>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="consultoria/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="consultoria/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="consultoria/assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="consultoria/assets/apple-touch-icon.png">
+  <link rel="manifest" href="consultoria/assets/site.webmanifest">
+
+  <!-- JSON-LD Structured Data (Article) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Más allá del arancel: La reconversión estratégica y la seguridad nacional en Acerías Paz del Río",
+        "description": "Análisis sobre por qué la única siderúrgica integrada de Colombia es un activo de seguridad nacional y cómo las grandes siderúrgicas globales pivotaron hacia alto valor agregado.",
+        "image": "https://mauriciopineda.com/consultoria/assets/og-image-final.jpg",
+        "datePublished": "2025-11-05",
+        "dateModified": "2025-11-05",
+        "author": {
+          "@type": "Person",
+          "name": "Mauricio Pineda",
+          "url": "https://mauriciopineda.com/consultoria/",
+          "image": "https://mauriciopineda.com/consultoria/assets/mauricio-recorte.png",
+          "sameAs": [
+            "https://www.linkedin.com/in/mauriciopineda/",
+            "https://github.com/mauriciop-dev",
+            "https://wa.me/573144897092",
+            "https://x.com/mauricioproject"
+          ],
+          "jobTitle": "Consultor Senior en Formulación y Gestión de Proyectos de Desarrollo Territorial",
+          "worksFor": { "@type": "Organization", "name": "Consultoría Independiente" }
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Mauricio Pineda",
+          "logo": { "@type": "ImageObject", "url": "https://mauriciopineda.com/consultoria/assets/favicon.svg" }
+        },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mauriciopineda.com/acerias.html" }
+      },
+      {
+        "@type": "Person",
+        "name": "Mauricio Pineda",
+        "url": "https://mauriciopineda.com/consultoria/",
+        "image": "https://mauriciopineda.com/consultoria/assets/mauricio-recorte.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/mauriciopineda/",
+          "https://github.com/mauriciop-dev",
+          "https://wa.me/573144897092",
+          "https://x.com/mauricioproject"
+        ],
+        "jobTitle": "Consultor Senior en Formulación y Gestión de Proyectos de Desarrollo Territorial",
+        "worksFor": { "@type": "Organization", "name": "Consultoría Independiente" },
+        "knowsAbout": [
+          "Formulación de proyectos",
+          "Gestión de proyectos",
+          "Desarrollo territorial",
+          "Construcción de paz",
+          "Transformación digital",
+          "Inteligencia artificial aplicada",
+          "Obras por Impuestos",
+          "Política pública",
+          "Análisis estratégico industrial"
+        ],
+        "address": { "@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO" },
+        "email": "mailto:hmauricio.pineda@gmail.com",
+        "telephone": "+57-314-489-7092"
+      }
+    ]
+  }
+  </script>
+
+  <title>Más allá del arancel: La reconversión estratégica en Acerías Paz del Río | Mauricio Pineda</title>
+
+  <script src="consultoria/consultoria.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
+  
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  
+  <header class="site-nav">
+    <a class="brand" href="index.html" aria-label="Mauricio Pineda, inicio">MP<span>.</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="index.html#two-worlds">Inicio</a>
+      <a href="consultoria/">Consultoría</a>
+      <a href="https://www.linkedin.com/in/mauriciopineda/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="nav-cta" href="mailto:hmauricio.pineda@gmail.com?subject=Consulta%20sobre%20proyectos">Contacto <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main" class="article-page">
+    <article class="article-header">
+      <div class="article-copy reveal">
+        <div class="article-meta">
+          <time datetime="2025-11-05">05 Nov 2025</time>
+          <span class="category">Análisis Estratégico · Industria</span>
+          <span>12 min lectura</span>
+        </div>
+        <h1 class="article-title">Más allá del arancel: La reconversión estratégica y la <em>seguridad nacional</em> en Acerías Paz del Río</h1>
+        <p class="article-lead">La expiración de las medidas arancelarias expuso a la única siderúrgica integrada de Colombia a una competencia desigual. Pero el debate no es solo comercial: es una cuestión de soberanía industrial. Lecciones de SSAB, Voestalpine y Nucor para transformar un activo estratégico en proveedor de la infraestructura que el país necesita.</p>
+        <div class="article-author">
+          <img class="author-avatar" src="consultoria/assets/mauricio-recorte.webp" alt="Mauricio Pineda" width="56" height="56" fetchpriority="high">
+          <div class="author-info">
+            <div class="author-name">Mauricio Pineda</div>
+            <div class="author-role">Consultor Senior · Desarrollo Territorial & Análisis Estratégico</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="article-content reveal">
+      <p>La industria siderúrgica colombiana atraviesa una de sus encrucijadas más críticas en décadas. La expiración de las medidas de protección arancelaria a las importaciones de alambrón de acero provenientes de países sin acuerdos comerciales —principalmente China y Rusia— expuso a Acerías Paz del Río a una dura competencia en condiciones desfavorables frente a productos que ingresan con subsidios de origen. Dado que el alambrón representa cerca del <strong>40 % de la producción total</strong> de la planta de Belencito y la mitad del consumo nacional de este insumo, el impacto operativo no se ha hecho esperar: estrechamiento de márgenes financieros, presiones sobre la viabilidad operativa y tensiones laborales reflejadas en salidas de personal y movilizaciones sindicales en el departamento de Boyacá.</p>
+
+      <p>Sin embargo, el debate alrededor de Acerías Paz del Río no puede reducirse a una simple discusión de política comercial o auxilio coyuntural. Al ser la <strong>única siderúrgica integrada del país</strong> —capaz de transformar mineral de hierro en acero sin depender exclusivamente de chatarra—, la supervivencia y modernización de su planta no es solo un asunto de rentabilidad privada, sino una cuestión prioritaria de <strong>seguridad nacional y soberanía industrial</strong>. Depender en un 100 % de acero importado para la infraestructura crítica del Estado (puentes, redes ferroviarias, vivienda y seguridad) deja al país vulnerable ante disrupciones en las cadenas globales de suministro y crisis geopolíticas internacionales.</p>
+
+      <p>No obstante, la protección arancelaria solo otorga un margen temporal de maniobra. La evidencia internacional enseña que las siderúrgicas tradicionales que lograron superar crisis estructurales de sobreoferta global lo hicieron redefiniendo su modelo de negocio: migrando de la comercialización de <em>commodities</em> masivos de bajo margen hacia soluciones de ingeniería de alto valor agregado.</p>
+
+      <hr>
+
+      <h2>Benchmarks globales: Cómo pivotaron las grandes siderúrgicas</h2>
+
+      <p>El reto de competir con volúmenes masivos y costos subsidiados del exterior se ha presentado en diversos mercados mundiales. La respuesta estratégica de grandes actores internacionales ofrece rutas concretas de reconversión:</p>
+
+      <h3>1. SSAB (Suecia): Especialización de alto valor y acero descarbonizado</h3>
+      <p>Frente a la imposibilidad de competir por volumen con productores asiáticos de bajo costo, la siderúrgica sueca <strong>SSAB</strong> reorientó su modelo hacia la producción de aceros de alta resistencia y el desarrollo del proyecto <strong>HYBRIT</strong> (<em>Hydrogen Breakthrough Ironmaking Technology</em>). Mediante esta tecnología sustituyeron el carbón por hidrógeno verde en el proceso de reducción del hierro, logrando comercializar el primer acero libre de emisiones fósiles del mercado.</p>
+      <ul>
+        <li><strong>Lección estratégica:</strong> En lugar de disputar el mercado del acero ordinario, convirtieron la descarbonización en un factor de diferenciación que les permite cobrar una prima de valor frente a la industria automotriz y de maquinaria pesada.</li>
+        <li><strong>Fuente oficial:</strong> <a href="https://www.ssab.com/en/fossil-free-steel" target="_blank" rel="noopener noreferrer">SSAB Fossil-free steel Strategy</a></li>
+      </ul>
+
+      <h3>2. Voestalpine (Austria): Integración aguas abajo e ingeniería de infraestructura</h3>
+      <p>Durante los años 80, la austríaca <strong>Voestalpine</strong> enfrentaba severas pérdidas operativas debido a altos costos locales e importaciones masivas. Su pivote consistió en abandonar el enfoque exclusivo en volumen básico para transformarse en un grupo tecnológico altamente especializado. Fundaron <strong>voestalpine Railway Systems</strong>, desde donde desarrollaron rieles de alta resistencia con tratamiento térmico HSH® y sistemas integrados de ingeniería para corredores ferroviarios de alta velocidad.</p>
+      <ul>
+        <li><strong>Lección estratégica:</strong> Transitaron de vender barras y perfiles de acero bruto a comercializar sistemas integrados de transporte masivo e infraestructura avanzada, capturando el margen financiero del diseño y montaje.</li>
+        <li><strong>Fuente oficial:</strong> <a href="https://www.voestalpine.com/railway-systems/en/applications/high-speed-traffic/" target="_blank" rel="noopener noreferrer">voestalpine High Speed Rail Systems</a></li>
+      </ul>
+
+      <h3>3. Nucor (Estados Unidos): Flexibilidad operativa y diversificación downstream</h3>
+      <p>Mientras varias siderúrgicas integradas tradicionales de EE. UU. quebraban por altos costos fijos y presión de importaciones, <strong>Nucor</strong> reestructuró el mercado mediante <strong>mini-mills</strong> impulsados por hornos de arco eléctrico (EAF). Paralelamente, la compañía diversificó su portafolio integrado verticalmente en la fabricación de productos terminados para construcción (estructuras prefabricadas, cubiertas metálicas y vigas armadas).</p>
+      <ul>
+        <li><strong>Lección estratégica:</strong> Mantener una estructura operativa adaptable y acercarse directamente al usuario final ofreciendo componentes listos para ensamblar en obra.</li>
+        <li><strong>Fuente de análisis:</strong> <a href="https://umbrex.com/resources/company-profiles/nucor/" target="_blank" rel="noopener noreferrer">Nucor Strategy & Business Model Case Study (Umbrex)</a></li>
+      </ul>
+
+      <hr>
+
+      <h2>Ventajas competitivas y activos estratégicos de Acerías Paz del Río</h2>
+
+      <p>Para sustentar su rol de pivote industrial, Acerías Paz del Río cuenta con activos únicos en el territorio colombiano que marcan una diferencia estructural frente a procesadores secundarios:</p>
+
+      <ul>
+        <li><strong>Integración minera vertical directa:</strong> Maneja la extracción y operación directa en concesiones de mineral de hierro (Paz de Río y Ubalá), carbón metalúrgico (Samacá y Tasco) y caliza (Nobsa). Esta condición le permite amortiguar parcialmente las fluctuaciones de precios de materias primas en el mercado internacional.</li>
+        <li><strong>Infraestructura logística y capacidad energética:</strong> Posee conectividad ferroviaria cautiva dentro de sus complejos y capacidad de autogeneración eléctrica a partir de gases de coquería, complementada con desarrollos de parques solares fotovoltaicos para diversificar su matriz energética.</li>
+        <li><strong>Aprovechamiento de subproductos industriales:</strong> Su proceso de alto horno produce escoria siderúrgica, un recurso estratégico para la fabricación de cementos de baja huella de carbono, abriendo unidades de negocio secundarias con la industria cementera nacional.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Rutas de diversificación comercial e infraestructura patria</h2>
+
+      <p>Para ir más allá de la defensa arancelaria del alambrón, la compañía tiene ante sí ventanas estratégicas de expansión hacia sectores clave del desarrollo nacional:</p>
+
+      <ol>
+        <li><strong>Socio principal de la reactivación férrea nacional:</strong> El plan de reactivación de trenes de carga y pasajeros en Colombia (como el corredor La Dorada-Chiriguaná, la red central y proyectos de cercanías) requiere insumos estratégicos. Paz del Río puede homologar y producir acero de calidad ferroviaria para rieles y traviesas, evitando la dependencia total de importaciones.</li>
+        <li><strong>De proveedor de insumos a integrador de obra pública:</strong> Desarrollar divisiones de fabricación de estructuras metálicas prefabricadas para puentes modulares, viaductos y edificaciones urbanas. Esto permite comercializar soluciones integradas de ingeniería en lugar de toneladas de varilla commoditizada.</li>
+        <li><strong>Fundición pesada e insumos industriales:</strong> Utilizar la capacidad del alto horno para proveer piezas de fundición pesada requeridas por sectores estratégicos como el naval (COTECMAR), el minero-energético y la maquinaria agrícola.</li>
+        <li><strong>Sinergia corporativa con el Grupo Trinity:</strong> La llegada del Grupo Trinity como accionista mayoritario suma capacidades de distribución logística, desarrollo de negocios e internacionalización. Este respaldo facilita la articulación de alianzas público-privadas (APP) para proyectos a gran escala.</li>
+      </ol>
+
+      <p>La preservación del empleo en Boyacá y el fortalecimiento industrial del país requieren superar la discusión arancelaria como única herramienta. Entender a Acerías Paz del Río como un activo de <strong>seguridad nacional y soberanía industrial</strong> implica respaldar su transformación hacia una empresa proveedora de la infraestructura que el país necesita para las próximas décadas.</p>
+    </div>
+
+    <!-- Author Signature at bottom right -->
+    <div class="article-signature reveal">
+      <div class="signature-block">
+        <img class="signature-avatar" src="consultoria/assets/mauricio-recorte.webp" alt="Mauricio Pineda" width="96" height="96" loading="lazy">
+        <div class="signature-name">Mauricio Pineda</div>
+        <div class="signature-role">Consultor Senior · Formulación y Gestión de Proyectos</div>
+        <div class="signature-links">
+          <a href="https://www.linkedin.com/in/mauriciopineda/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:hmauricio.pineda@gmail.com?subject=Consulta%20sobre%20proyectos">Contacto</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="article-footer">
+      <a href="index.html">← Volver al inicio</a>
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html">MP<span>.</span></a>
+    <span>Gestión estratégica con propósito.</span>
+    <a href="#main">Volver arriba ↑</a>
+  </footer>
+</body>
+</html>
