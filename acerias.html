@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://mauriciopineda.com/acerias.html">
   <meta property="og:title" content="Más allá del arancel: La reconversión estratégica y la seguridad nacional en Acerías Paz del Río">
   <meta property="og:description" content="Análisis sobre por qué la única siderúrgica integrada de Colombia es un activo de seguridad nacional y cómo las grandes siderúrgicas globales pivotaron hacia alto valor agregado.">
-  <meta property="og:image" content="https://mauriciopineda.com/consultoria/assets/og-image-final.jpg">
+  <meta property="og:image" content="https://mauriciopineda.com/acerias.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_CO">
@@ -34,7 +34,7 @@
   <meta name="twitter:creator" content="@mauricioproject">
   <meta name="twitter:title" content="Más allá del arancel: La reconversión estratégica en Acerías Paz del Río">
   <meta name="twitter:description" content="Por qué la única siderúrgica integrada de Colombia es un activo de seguridad nacional y lecciones de SSAB, Voestalpine y Nucor.">
-  <meta name="twitter:image" content="https://mauriciopineda.com/consultoria/assets/og-image-final.jpg">
+  <meta name="twitter:image" content="https://mauriciopineda.com/acerias.jpg">
 
   <!-- DNS Prefetch / Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +44,8 @@
   <link rel="preconnect" href="https://github.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
+  <!-- Preload hero image (article) -->
+  <link rel="preload" as="image" href="acerias.jpg" type="image/jpeg" fetchpriority="high">
   <!-- Preload avatar -->
   <link rel="preload" as="image" href="consultoria/assets/mauricio-recorte.webp" type="image/webp" fetchpriority="high">
 
@@ -142,6 +144,21 @@
       inset: 0;
       z-index: -1;
       background: radial-gradient(ellipse at 78% 16%, rgba(111,164,239,.16), transparent 33%), linear-gradient(135deg, #f7f9fc, #eef4fb 65%, #f8fafc);
+    }
+    .article-hero-image {
+      margin: clamp(20px, 3vh, 30px) calc(-1 * clamp(16px, 5vw, 80px)) 0;
+      max-width: calc(100% + 2 * clamp(16px, 5vw, 80px));
+    }
+    .article-hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 12px 40px rgba(33,57,91,.15);
+    }
+    @media (max-width: 768px) {
+      .article-hero-image { margin-left: -16px; margin-right: -16px; max-width: calc(100% + 32px); }
+      .article-hero-image img { border-radius: 0; }
     }
     .article-meta {
       display: flex;
@@ -415,7 +432,7 @@
         "@type": "Article",
         "headline": "Más allá del arancel: La reconversión estratégica y la seguridad nacional en Acerías Paz del Río",
         "description": "Análisis sobre por qué la única siderúrgica integrada de Colombia es un activo de seguridad nacional y cómo las grandes siderúrgicas globales pivotaron hacia alto valor agregado.",
-        "image": "https://mauriciopineda.com/consultoria/assets/og-image-final.jpg",
+        "image": "https://mauriciopineda.com/acerias.jpg",
         "datePublished": "2025-11-05",
         "dateModified": "2025-11-05",
         "author": {
@@ -499,6 +516,10 @@
         <h1 class="article-title">Más allá del arancel: La reconversión estratégica y la <em>seguridad nacional</em> en Acerías Paz del Río</h1>
         <p class="article-lead">La expiración de las medidas arancelarias expuso a la única siderúrgica integrada de Colombia a una competencia desigual. Pero el debate no es solo comercial: es una cuestión de soberanía industrial. Lecciones de SSAB, Voestalpine y Nucor para transformar un activo estratégico en proveedor de la infraestructura que el país necesita.</p>
       </div>
+      <!-- Hero image -->
+      <figure class="article-hero-image">
+        <img src="acerias.jpg" alt="Acerías Paz del Río - Planta siderúrgica en Belencito, Boyacá" width="1200" height="630" loading="eager" fetchpriority="high">
+      </figure>
     </article>
 
     <div class="article-content">
