@@ -335,6 +335,17 @@
       .author-avatar, .signature-avatar { image-rendering: -webkit-optimize-contrast; }
     }
     
+    /* Reveal animation (used by consultoria.js IntersectionObserver) */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    
+    /* Fallback: if JS fails or IntersectionObserver doesn't trigger, make visible after short delay */
+    .reveal.no-js { opacity: 1; transform: translateY(0); transition: none; }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: translateY(0); transition: none; }
+    }
+
     /* Print styles */
     @media print {
       .site-nav, .article-footer, .site-footer, .signature-links { display: none !important; }
@@ -545,5 +556,32 @@
     <span>Gestión estratégica con propósito.</span>
     <a href="#main">Volver arriba ↑</a>
   </footer>
+
+  <!-- Reveal fallback: ensure content visible if IntersectionObserver fails -->
+  <script>
+    (function() {
+      const reveals = document.querySelectorAll('.reveal');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (reduceMotion) {
+        reveals.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+      
+      // Fallback timeout: if IntersectionObserver doesn't trigger within 1.5s, show anyway
+      setTimeout(() => {
+        reveals.forEach(el => {
+          if (!el.classList.contains('is-visible')) {
+            el.classList.add('is-visible');
+          }
+        });
+      }, 1500);
+      
+      // Also handle case where IntersectionObserver is not supported
+      if (!('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('is-visible'));
+      }
+    })();
+  </script>
 </body>
 </html>
