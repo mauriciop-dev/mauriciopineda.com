@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://github.com" crossorigin>
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-  <!-- Preload hero image (WebP) -->
+  <!-- Preload avatar -->
   <link rel="preload" as="image" href="consultoria/assets/mauricio-recorte.webp" type="image/webp" fetchpriority="high">
 
   <!-- Fonts -->
@@ -53,102 +53,36 @@
   <!-- Styles -->
   <link rel="stylesheet" href="consultoria/consultoria.css">
   <style>
-    /* Article-specific styles */
-    .article-page { padding-top: 0; }
-    .article-header { 
-      display: grid; 
-      grid-template-columns: 1fr; 
-      gap: 1.5rem; 
-      padding: clamp(60px, 10vh, 100px) clamp(20px, 6vw, 100px) clamp(40px, 6vh, 60px); 
-      position: relative; 
-      overflow: hidden;
+    /* ===== ARTICLE PAGE STYLES ===== */
+    :root {
+      --ink: #101a2b;
+      --muted: #637087;
+      --blue: #4388ed;
+      --line: rgba(39,61,91,.14);
+      --paper: #f5f8fc;
     }
-    .article-header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: radial-gradient(ellipse at 78% 16%,rgba(111,164,239,.16),transparent 33%),linear-gradient(135deg,#f7f9fc,#eef4fb 65%,#f8fafc);
-    }
-    .article-meta { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 12px; 
-      align-items: center; 
-      font-size: .75rem; 
-      color: var(--muted); 
-      letter-spacing: .08em; 
-      text-transform: uppercase; 
-    }
-    .article-meta time { font-weight: 600; color: var(--ink); }
-    .article-meta .category { 
-      background: rgba(67,136,237,.12); 
-      color: var(--blue); 
-      padding: 4px 10px; 
-      border-radius: 3px; 
-      font-weight: 600; 
-      font-size: .65rem; 
-    }
-    .article-title { 
-      max-width: 900px; 
-      font-size: clamp(1.9rem, 4.5vw, 3.2rem); 
-      line-height: 1.15; 
-      letter-spacing: -.03em; 
-      color: var(--ink); 
-    }
-    .article-title em { font-style: italic; color: var(--blue); }
-    .article-lead { 
-      max-width: 720px; 
-      font-size: clamp(1rem, 2.2vw, 1.15rem); 
-      line-height: 1.7; 
-      color: var(--muted); 
-      margin-top: 1rem; 
-    }
-    .article-author { 
-      display: flex; 
-      align-items: center; 
-      gap: 12px; 
-      margin-top: 1.5rem; 
-      padding-top: 1.25rem; 
-      border-top: 1px solid var(--line); 
-      max-width: 720px; 
-    }
-    .author-avatar { 
-      width: 48px; 
-      height: 48px; 
-      border-radius: 50%; 
-      object-fit: cover; 
-      border: 2px solid rgba(67,136,237,.2); 
-      flex-shrink: 0;
-    }
-    .author-info { line-height: 1.3; min-width: 0; }
-    .author-name { font: 700 .95rem Manrope,sans-serif; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .author-role { font-size: .78rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { margin: 0; font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
     
-    .article-content { 
-      max-width: 820px; 
-      margin: 0 auto; 
-      padding: clamp(30px, 5vh, 50px) clamp(20px, 6vw, 100px) clamp(40px, 6vh, 60px); 
-      font: 400 1.05rem/1.8 'DM Sans',sans-serif; 
-      color: var(--ink); 
+    /* Background from consultoria */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background: radial-gradient(ellipse at 78% 16%, rgba(111,164,239,.16), transparent 33%), linear-gradient(135deg, #f7f9fc, #eef4fb 65%, #f8fafc);
     }
-    .article-content h2 { 
-      font: 700 clamp(1.5rem, 3.5vw, 1.9rem)/1.25 Manrope,sans-serif; 
-      letter-spacing: -.03em; 
-      color: var(--ink); 
-      margin: clamp(2.5rem, 5vh, 3.5rem) 0 1rem; 
-      padding-bottom: .5rem; 
-      border-bottom: 2px solid var(--line); 
-    }
-    .article-content h3 { 
-      font: 700 clamp(1.2rem, 2.8vw, 1.35rem)/1.3 Manrope,sans-serif; 
-      letter-spacing: -.02em; 
-      color: var(--ink); 
-      margin: clamp(2rem, 4vh, 2.5rem) 0 .75rem; 
-    }
-    .article-content p { margin-bottom: 1.1rem; }
-    .article-content strong { font-weight: 600; }
-    .article-content em { font-style: italic; color: var(--ink); }
+    #bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: .65; }
+
+    a { color: inherit; }
+    h1, h2, h3 { font-family: Manrope, sans-serif; letter-spacing: -.03em; color: var(--ink); }
+    p { color: var(--muted); margin-bottom: 1.1rem; }
+    strong { font-weight: 600; }
+    em { font-style: italic; color: var(--ink); }
+
+    /* Links */
     .article-content a { 
       color: var(--blue); 
       text-decoration: underline; 
@@ -157,204 +91,312 @@
       transition: color .2s; 
     }
     .article-content a:hover { color: #245db3; }
+
+    /* Lists */
     .article-content ul { margin: 1rem 0 1rem 1.25rem; }
     .article-content li { margin-bottom: .6rem; line-height: 1.7; }
     .article-content ol { margin: 1rem 0 1rem 1.5rem; }
     .article-content ol li { margin-bottom: .75rem; line-height: 1.7; }
-    .article-content hr { 
-      border: none; 
-      border-top: 1px solid var(--line); 
-      margin: clamp(2rem, 4vh, 3rem) 0; 
+
+    /* HR */
+    .article-content hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+
+    /* ===== NAV ===== */
+    .site-nav {
+      height: 72px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(16px, 5vw, 80px);
+      background: rgba(246,249,253,.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(45,69,100,.08);
     }
-    .article-content blockquote { 
-      border-left: 3px solid var(--blue); 
-      padding-left: 1.25rem; 
-      margin: 1.5rem 0; 
-      color: var(--muted); 
-      font-style: italic; 
+    .brand { font: 800 1.5rem Manrope, sans-serif; letter-spacing: -.08em; text-decoration: none; color: var(--ink); }
+    .brand span { color: var(--blue); }
+    .site-nav nav { display: flex; align-items: center; gap: clamp(12px, 3vw, 28px); }
+    .site-nav nav a { font-size: .85rem; color: #46536a; text-decoration: none; font-weight: 600; transition: color .2s; white-space: nowrap; }
+    .site-nav nav a:hover { color: var(--blue); }
+    .site-nav .nav-cta { padding: 10px 16px; border: 1px solid rgba(26,45,75,.18); border-radius: 4px; color: var(--ink); font-size: .82rem; }
+    .nav-cta span { color: var(--blue); }
+
+    /* Mobile nav adjustments */
+    @media (max-width: 480px) {
+      .site-nav { height: 60px; padding: 0 16px; }
+      .site-nav nav a:not(.nav-cta) { display: none; }
+      .site-nav .nav-cta { padding: 8px 12px; font-size: .78rem; }
     }
-    
-    /* Author signature at bottom right */
-    .article-signature { 
-      position: relative; 
-      margin-top: clamp(2.5rem, 5vh, 3.5rem); 
-      padding-top: clamp(1.5rem, 3vh, 2rem); 
-      border-top: 1px solid var(--line); 
-      display: flex; 
-      justify-content: flex-end; 
-      align-items: flex-end; 
-      gap: 1.25rem; 
+
+    /* ===== ARTICLE HEADER ===== */
+    .article-header {
+      padding: clamp(50px, 8vh, 80px) clamp(16px, 5vw, 80px) clamp(30px, 5vh, 50px);
+      position: relative;
+      overflow: hidden;
     }
-    .signature-block { 
-      display: flex; 
-      flex-direction: column; 
-      align-items: flex-end; 
-      gap: .5rem; 
-      text-align: right; 
+    .article-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(ellipse at 78% 16%, rgba(111,164,239,.16), transparent 33%), linear-gradient(135deg, #f7f9fc, #eef4fb 65%, #f8fafc);
     }
-    .signature-avatar { 
-      width: clamp(72px, 12vw, 96px); 
-      height: clamp(72px, 12vw, 96px); 
-      border-radius: 50%; 
-      object-fit: cover; 
-      border: 3px solid rgba(67,136,237,.15); 
-      box-shadow: 0 8px 30px rgba(33,57,91,.1); 
-      transition: transform .3s ease, box-shadow .3s ease; 
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: .7rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .article-meta time { font-weight: 600; color: var(--ink); }
+    .article-meta .category {
+      background: rgba(67,136,237,.12);
+      color: var(--blue);
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: .6rem;
+    }
+    .article-title {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -.03em;
+      color: var(--ink);
+      margin: 0;
+      max-width: 900px;
+    }
+    .article-title em { font-style: italic; color: var(--blue); }
+    .article-lead {
+      max-width: 720px;
+      font-size: clamp(.95rem, 2.2vw, 1.1rem);
+      line-height: 1.7;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* ===== ARTICLE CONTENT ===== */
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: clamp(24px, 4vh, 40px) clamp(16px, 5vw, 80px) clamp(40px, 6vh, 60px);
+      font: 400 1.02rem/1.8 'DM Sans', sans-serif;
+      color: var(--ink);
+    }
+    .article-content h2 {
+      font: 700 clamp(1.4rem, 3.5vw, 1.75rem)/1.25 Manrope, sans-serif;
+      color: var(--ink);
+      margin: clamp(2rem, 4vh, 3rem) 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--line);
+    }
+    .article-content h3 {
+      font: 700 clamp(1.15rem, 2.8vw, 1.25rem)/1.3 Manrope, sans-serif;
+      color: var(--ink);
+      margin: clamp(1.75rem, 3.5vh, 2.25rem) 0 .75rem;
+    }
+
+    /* ===== AUTHOR SIGNATURE (bottom right) ===== */
+    .article-signature {
+      margin-top: clamp(2rem, 4vh, 3rem);
+      padding-top: clamp(1.5rem, 3vh, 2rem);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(16px, 5vw, 80px);
+      padding-right: clamp(16px, 5vw, 80px);
+    }
+    .signature-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: .5rem;
+      text-align: right;
+    }
+    .signature-avatar {
+      width: clamp(64px, 10vw, 88px);
+      height: clamp(64px, 10vw, 88px);
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(67,136,237,.15);
+      box-shadow: 0 8px 30px rgba(33,57,91,.1);
+      transition: transform .3s ease, box-shadow .3s ease;
       flex-shrink: 0;
     }
-    .signature-avatar:hover { 
-      transform: scale(1.03) rotate(-1deg); 
-      box-shadow: 0 12px 40px rgba(33,57,91,.15); 
+    .signature-avatar:hover {
+      transform: scale(1.03) rotate(-1deg);
+      box-shadow: 0 12px 40px rgba(33,57,91,.15);
     }
-    .signature-name { 
-      font: 700 clamp(.95rem, 2vw, 1.1rem) Manrope,sans-serif; 
-      color: var(--ink); 
-      letter-spacing: -.02em; 
+    .signature-name {
+      font: 700 clamp(.9rem, 1.8vw, 1rem) Manrope, sans-serif;
+      color: var(--ink);
+      letter-spacing: -.02em;
       white-space: nowrap;
     }
-    .signature-role { 
-      font-size: clamp(.75rem, 1.6vw, .85rem); 
-      color: var(--muted); 
+    .signature-role {
+      font-size: clamp(.7rem, 1.4vw, .8rem);
+      color: var(--muted);
       white-space: nowrap;
     }
-    .signature-links { 
-      display: flex; 
-      gap: .75rem; 
-      margin-top: .25rem; 
+    .signature-links {
+      display: flex;
+      gap: .6rem;
+      margin-top: .25rem;
     }
-    .signature-links a { 
-      font-size: clamp(.65rem, 1.3vw, .75rem); 
-      font-weight: 600; 
-      letter-spacing: .06em; 
-      text-transform: uppercase; 
-      color: var(--blue); 
-      text-decoration: none; 
-      transition: color .2s; 
+    .signature-links a {
+      font-size: clamp(.6rem, 1.2vw, .7rem);
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      text-decoration: none;
+      transition: color .2s;
       white-space: nowrap;
     }
     .signature-links a:hover { color: #245db3; }
-    
-    /* Back to home link */
-    .article-footer { 
-      padding: clamp(24px, 4vh, 40px) clamp(20px, 6vw, 100px); 
-      text-align: center; 
-      border-top: 1px solid var(--line); 
-      background: rgba(255,255,255,.5); 
-      backdrop-filter: blur(12px); 
+
+    /* ===== BACK TO HOME ===== */
+    .article-footer {
+      padding: clamp(20px, 3vh, 32px) clamp(16px, 5vw, 80px);
+      text-align: center;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.5);
+      backdrop-filter: blur(12px);
     }
-    .article-footer a { 
-      font: 600 .9rem 'DM Sans',sans-serif; 
-      color: var(--blue); 
-      text-decoration: none; 
-      display: inline-flex; 
-      align-items: center; 
-      gap: 8px; 
-      transition: color .2s; 
+    .article-footer a {
+      font: 600 .85rem 'DM Sans', sans-serif;
+      color: var(--blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
     }
     .article-footer a:hover { color: #245db3; }
-    
-    /* Mobile-first responsive breakpoints */
-    @media (max-width: 320px) {
-      .article-header { padding: 50px 16px 30px; }
-      .article-meta { gap: 8px; font-size: .7rem; }
-      .article-meta .category { padding: 3px 8px; font-size: .6rem; }
-      .article-title { font-size: 1.7rem; }
-      .article-lead { font-size: .95rem; }
-      .article-author { gap: 10px; margin-top: 1.25rem; }
-      .author-avatar { width: 42px; height: 42px; }
-      .author-name { font-size: .85rem; }
-      .author-role { font-size: .7rem; }
-      .article-content { padding: 24px 16px 36px; font-size: .98rem; line-height: 1.7; }
-      .article-content h2 { font-size: 1.35rem; margin-top: 2rem; }
-      .article-content h3 { font-size: 1.1rem; margin-top: 1.75rem; }
-      .article-content ul, .article-content ol { margin-left: 1rem; }
-      .article-signature { gap: 1rem; margin-top: 2rem; padding-top: 1.25rem; }
-      .signature-avatar { width: 64px; height: 64px; }
-      .signature-name { font-size: .85rem; }
-      .signature-role { font-size: .7rem; }
-      .signature-links { gap: .5rem; }
-      .signature-links a { font-size: .6rem; }
-      .article-footer { padding: 20px 16px; }
-      .site-nav { padding: 0 16px; height: 64px; }
+
+    /* ===== SITE FOOTER ===== */
+    .site-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px clamp(16px, 5vw, 80px);
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.5);
+      backdrop-filter: blur(12px);
+      font-size: .8rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 12px;
     }
-    
+    .site-footer .brand { font-size: 1.25rem; }
+    .site-footer a { color: var(--muted); text-decoration: none; transition: color .2s; }
+    .site-footer a:hover { color: var(--blue); }
+
+    /* ===== RESPONSIVE FINE-TUNING ===== */
+    @media (max-width: 320px) {
+      .article-header { padding: 40px 14px 24px; }
+      .article-meta { gap: 6px; font-size: .65rem; }
+      .article-title { font-size: 1.6rem; }
+      .article-lead { font-size: .9rem; }
+      .article-content { padding: 20px 14px 30px; font-size: .95rem; line-height: 1.7; }
+      .article-content h2 { font-size: 1.25rem; margin-top: 1.75rem; }
+      .article-content h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+      .article-content ul, .article-content ol { margin-left: 1rem; }
+      .article-signature { gap: .75rem; margin-top: 1.5rem; padding-top: 1.25rem; padding-left: 14px; padding-right: 14px; }
+      .signature-avatar { width: 56px; height: 56px; }
+      .signature-name { font-size: .8rem; }
+      .signature-role { font-size: .65rem; }
+      .signature-links { gap: .4rem; }
+      .signature-links a { font-size: .55rem; }
+      .article-footer { padding: 16px 14px; }
+    }
+
     @media (min-width: 321px) and (max-width: 480px) {
-      .article-header { padding: 60px 20px 40px; }
-      .article-title { font-size: clamp(1.8rem, 5vw, 2.2rem); }
+      .article-header { padding: 50px 18px 32px; }
+      .article-title { font-size: clamp(1.7rem, 5vw, 2.1rem); }
+      .article-lead { font-size: .95rem; }
+      .article-content { padding: 24px 18px 36px; font-size: .98rem; }
+      .article-content h2 { font-size: 1.35rem; }
+      .article-content h3 { font-size: 1.1rem; }
+      .signature-avatar { width: 60px; height: 60px; }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      .article-header { padding: 60px 22px 40px; }
+      .article-title { font-size: clamp(2rem, 5vw, 2.4rem); }
       .article-lead { font-size: 1rem; }
-      .article-content { padding: 28px 20px 40px; font-size: 1rem; }
-      .article-content h2 { font-size: 1.45rem; }
+      .article-content { padding: 30px 22px 44px; font-size: 1rem; }
+      .article-content h2 { font-size: 1.5rem; }
       .article-content h3 { font-size: 1.15rem; }
       .signature-avatar { width: 68px; height: 68px; }
     }
-    
-    @media (min-width: 481px) and (max-width: 768px) {
-      .article-header { padding: 70px 24px 50px; }
-      .article-title { font-size: clamp(2rem, 5vw, 2.5rem); }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 70px 36px 50px; }
+      .article-title { font-size: clamp(2.2rem, 4vw, 2.6rem); }
       .article-lead { font-size: 1.05rem; }
-      .article-content { padding: 36px 24px 48px; font-size: 1.02rem; }
-      .article-content h2 { font-size: 1.6rem; }
-      .article-content h3 { font-size: 1.25rem; }
+      .article-content { padding: 36px 36px 50px; }
       .signature-avatar { width: 76px; height: 76px; }
     }
-    
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .article-header { padding: 80px 40px 60px; }
-      .article-title { font-size: clamp(2.3rem, 4vw, 2.8rem); }
-      .article-lead { font-size: 1.1rem; }
-      .article-content { padding: 45px 40px 55px; }
-      .signature-avatar { width: 84px; height: 84px; }
-    }
-    
+
     @media (min-width: 1025px) and (max-width: 1440px) {
-      .article-header { padding: 90px 60px 70px; }
-      .signature-avatar { width: 90px; height: 90px; }
+      .article-header { padding: 80px 50px 60px; }
+      .signature-avatar { width: 82px; height: 82px; }
     }
-    
+
     @media (min-width: 1441px) {
-      .article-header { padding: 100px 100px 80px; }
-      .signature-avatar { width: 96px; height: 96px; }
+      .article-header { padding: 90px 80px 70px; }
+      .signature-avatar { width: 88px; height: 88px; }
     }
-    
-    /* Landscape mobile optimization */
+
+    /* Landscape mobile */
     @media (max-height: 500px) and (orientation: landscape) {
-      .article-header { padding: 40px clamp(20px,6vw,100px) 30px; }
-      .article-title { font-size: clamp(1.6rem, 4vw, 2.2rem); }
-      .article-lead { font-size: .95rem; margin-top: .75rem; }
-      .article-author { margin-top: 1rem; padding-top: 1rem; }
-      .article-content { padding: 24px clamp(20px,6vw,100px) 36px; }
+      .article-header { padding: 32px clamp(16px,5vw,80px) 24px; }
+      .article-title { font-size: clamp(1.5rem, 4vw, 2rem); }
+      .article-lead { font-size: .9rem; margin-top: .5rem; }
+      .article-content { padding: 20px clamp(16px,5vw,80px) 30px; }
     }
-    
+
+    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .signature-avatar { transition: none; }
       * { animation: none !important; transition: none !important; }
-    }
-    
-    /* High DPI displays */
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      .author-avatar, .signature-avatar { image-rendering: -webkit-optimize-contrast; }
-    }
-    
-    /* Reveal animation (only for header) */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: translateY(0); transition: none; }
+      html { scroll-behavior: auto; }
     }
 
-    /* Print styles */
+    /* High DPI */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .signature-avatar { image-rendering: -webkit-optimize-contrast; }
+    }
+
+    /* Print */
     @media print {
-      .site-nav, .article-footer, .site-footer, .signature-links { display: none !important; }
+      .site-nav, .article-footer, .site-footer, .signature-links, #bg-canvas { display: none !important; }
       .article-header { padding: 0; background: none; }
       .article-header::before { display: none; }
-      .article-content { padding: 0; max-width: none; font-size: 11pt; line-height: 1.6; }
+      .article-content { padding: 0; max-width: none; font-size: 11pt; line-height: 1.6; color: #000; }
       .article-signature { border-top: 2px solid #000; padding-top: 1rem; margin-top: 2rem; }
       .signature-avatar { border: 2px solid #000; box-shadow: none; width: 60px !important; height: 60px !important; }
-      a { color: #000 !important; text-decoration: underline !important; }
-      a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #666; }
-      a[href^="#"]::after, a[href^="mailto:"]::after { content: ""; }
+      .article-content a { color: #000 !important; text-decoration: underline !important; }
+      .article-content a::after { content: " (" attr(href) ")"; font-size: 8pt; color: #666; }
+      .article-content a[href^="#"]::after, .article-content a[href^="mailto:"]::after { content: ""; }
+      body::before { display: none; }
+      body { background: #fff; }
     }
+
+    /* Skip link */
+    .skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 12px 24px; border-radius: 4px; z-index: 100; font-weight: 600; text-decoration: none; transition: all .2s; opacity: 0; }
+    .skip-link:focus { top: 10px; opacity: 1; outline: 3px solid var(--blue); outline-offset: 2px; }
   </style>
 
   <!-- Favicons -->
@@ -364,7 +406,7 @@
   <link rel="apple-touch-icon" href="consultoria/assets/apple-touch-icon.png">
   <link rel="manifest" href="consultoria/assets/site.webmanifest">
 
-  <!-- JSON-LD Structured Data (Article) -->
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -430,8 +472,6 @@
   </script>
 
   <title>Más allá del arancel: La reconversión estratégica en Acerías Paz del Río | Mauricio Pineda</title>
-
-  <script src="consultoria/consultoria.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Saltar al contenido principal</a>
@@ -449,7 +489,7 @@
   </header>
 
   <main id="main" class="article-page">
-    <article class="article-header reveal">
+    <article class="article-header">
       <div class="article-copy">
         <div class="article-meta">
           <time datetime="2025-11-05">05 Nov 2025</time>
@@ -523,10 +563,10 @@
       <p>La preservación del empleo en Boyacá y el fortalecimiento industrial del país requieren superar la discusión arancelaria como única herramienta. Entender a Acerías Paz del Río como un activo de <strong>seguridad nacional y soberanía industrial</strong> implica respaldar su transformación hacia una empresa proveedora de la infraestructura que el país necesita para las próximas décadas.</p>
     </div>
 
-    <!-- Author Signature at bottom right (only photo here) -->
+    <!-- Author Signature at bottom right -->
     <div class="article-signature">
       <div class="signature-block">
-        <img class="signature-avatar" src="consultoria/assets/mauricio-recorte.webp" alt="Mauricio Pineda" width="96" height="96" loading="lazy">
+        <img class="signature-avatar" src="consultoria/assets/mauricio-recorte.webp" alt="Mauricio Pineda" width="88" height="88" loading="lazy">
         <div class="signature-name">Mauricio Pineda</div>
         <div class="signature-role">Consultor Senior · Formulación y Gestión de Proyectos</div>
         <div class="signature-links">
@@ -546,30 +586,5 @@
     <span>Gestión estratégica con propósito.</span>
     <a href="#main">Volver arriba ↑</a>
   </footer>
-
-  <!-- Header reveal fallback -->
-  <script>
-    (function() {
-      const header = document.querySelector('.article-header.reveal');
-      if (!header) return;
-      
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) {
-        header.classList.add('is-visible');
-        return;
-      }
-      
-      // Fallback: show header after 1s if IntersectionObserver doesn't trigger
-      setTimeout(() => {
-        if (!header.classList.contains('is-visible')) {
-          header.classList.add('is-visible');
-        }
-      }, 1000);
-      
-      if (!('IntersectionObserver' in window)) {
-        header.classList.add('is-visible');
-      }
-    })();
-  </script>
 </body>
 </html>
