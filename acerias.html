@@ -335,15 +335,12 @@
       .author-avatar, .signature-avatar { image-rendering: -webkit-optimize-contrast; }
     }
     
-    /* Reveal animation (progressive enhancement) */
-    /* Default: content visible. JS adds .js-reveal-ready to enable animation */
-    .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-    .js-reveal-ready .reveal { opacity: 0; transform: translateY(24px); }
-    .js-reveal-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    /* Reveal animation (only for header) */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
     
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: translateY(0); transition: none; }
-      .js-reveal-ready .reveal { opacity: 1; transform: translateY(0); }
     }
 
     /* Print styles */
@@ -434,15 +431,6 @@
 
   <title>Más allá del arancel: La reconversión estratégica en Acerías Paz del Río | Mauricio Pineda</title>
 
-  <!-- Enable reveal animation early to avoid flash -->
-  <script>
-    (function() {
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.documentElement.classList.add('js-reveal-ready');
-      }
-    })();
-  </script>
-
   <script src="consultoria/consultoria.js" defer></script>
 </head>
 <body>
@@ -461,8 +449,8 @@
   </header>
 
   <main id="main" class="article-page">
-    <article class="article-header">
-      <div class="article-copy reveal">
+    <article class="article-header reveal">
+      <div class="article-copy">
         <div class="article-meta">
           <time datetime="2025-11-05">05 Nov 2025</time>
           <span class="category">Análisis Estratégico · Industria</span>
@@ -470,17 +458,10 @@
         </div>
         <h1 class="article-title">Más allá del arancel: La reconversión estratégica y la <em>seguridad nacional</em> en Acerías Paz del Río</h1>
         <p class="article-lead">La expiración de las medidas arancelarias expuso a la única siderúrgica integrada de Colombia a una competencia desigual. Pero el debate no es solo comercial: es una cuestión de soberanía industrial. Lecciones de SSAB, Voestalpine y Nucor para transformar un activo estratégico en proveedor de la infraestructura que el país necesita.</p>
-        <div class="article-author">
-          <img class="author-avatar" src="consultoria/assets/mauricio-recorte.webp" alt="Mauricio Pineda" width="56" height="56" fetchpriority="high">
-          <div class="author-info">
-            <div class="author-name">Mauricio Pineda</div>
-            <div class="author-role">Consultor Senior · Desarrollo Territorial & Análisis Estratégico</div>
-          </div>
-        </div>
       </div>
     </article>
 
-    <div class="article-content reveal">
+    <div class="article-content">
       <p>La industria siderúrgica colombiana atraviesa una de sus encrucijadas más críticas en décadas. La expiración de las medidas de protección arancelaria a las importaciones de alambrón de acero provenientes de países sin acuerdos comerciales —principalmente China y Rusia— expuso a Acerías Paz del Río a una dura competencia en condiciones desfavorables frente a productos que ingresan con subsidios de origen. Dado que el alambrón representa cerca del <strong>40 % de la producción total</strong> de la planta de Belencito y la mitad del consumo nacional de este insumo, el impacto operativo no se ha hecho esperar: estrechamiento de márgenes financieros, presiones sobre la viabilidad operativa y tensiones laborales reflejadas en salidas de personal y movilizaciones sindicales en el departamento de Boyacá.</p>
 
       <p>Sin embargo, el debate alrededor de Acerías Paz del Río no puede reducirse a una simple discusión de política comercial o auxilio coyuntural. Al ser la <strong>única siderúrgica integrada del país</strong> —capaz de transformar mineral de hierro en acero sin depender exclusivamente de chatarra—, la supervivencia y modernización de su planta no es solo un asunto de rentabilidad privada, sino una cuestión prioritaria de <strong>seguridad nacional y soberanía industrial</strong>. Depender en un 100 % de acero importado para la infraestructura crítica del Estado (puentes, redes ferroviarias, vivienda y seguridad) deja al país vulnerable ante disrupciones en las cadenas globales de suministro y crisis geopolíticas internacionales.</p>
@@ -542,8 +523,8 @@
       <p>La preservación del empleo en Boyacá y el fortalecimiento industrial del país requieren superar la discusión arancelaria como única herramienta. Entender a Acerías Paz del Río como un activo de <strong>seguridad nacional y soberanía industrial</strong> implica respaldar su transformación hacia una empresa proveedora de la infraestructura que el país necesita para las próximas décadas.</p>
     </div>
 
-    <!-- Author Signature at bottom right -->
-    <div class="article-signature reveal">
+    <!-- Author Signature at bottom right (only photo here) -->
+    <div class="article-signature">
       <div class="signature-block">
         <img class="signature-avatar" src="consultoria/assets/mauricio-recorte.webp" alt="Mauricio Pineda" width="96" height="96" loading="lazy">
         <div class="signature-name">Mauricio Pineda</div>
@@ -566,33 +547,27 @@
     <a href="#main">Volver arriba ↑</a>
   </footer>
 
-  <!-- Reveal fallback: ensure content visible if IntersectionObserver fails -->
+  <!-- Header reveal fallback -->
   <script>
     (function() {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const header = document.querySelector('.article-header.reveal');
+      if (!header) return;
       
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduceMotion) {
-        document.documentElement.classList.remove('js-reveal-ready');
+        header.classList.add('is-visible');
         return;
       }
       
-      // Fallback: if IntersectionObserver doesn't trigger within 2s, disable animation
+      // Fallback: show header after 1s if IntersectionObserver doesn't trigger
       setTimeout(() => {
-        const reveals = document.querySelectorAll('.reveal');
-        let allVisible = true;
-        reveals.forEach(el => {
-          if (!el.classList.contains('is-visible')) {
-            allVisible = false;
-          }
-        });
-        if (!allVisible) {
-          document.documentElement.classList.remove('js-reveal-ready');
+        if (!header.classList.contains('is-visible')) {
+          header.classList.add('is-visible');
         }
-      }, 2000);
+      }, 1000);
       
-      // Also handle case where IntersectionObserver is not supported
       if (!('IntersectionObserver' in window)) {
-        document.documentElement.classList.remove('js-reveal-ready');
+        header.classList.add('is-visible');
       }
     })();
   </script>
