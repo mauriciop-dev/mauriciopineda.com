@@ -180,6 +180,14 @@
       font-weight: 600;
       font-size: .6rem;
     }
+    .article-meta .read-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .article-meta .read-count svg { width: 12px; height: 12px; opacity: .6; }
     .article-title {
       font-size: clamp(1.8rem, 4.5vw, 3rem);
       line-height: 1.15;
@@ -512,6 +520,10 @@
           <time datetime="2025-11-05">05 Nov 2025</time>
           <span class="category">Análisis Estratégico · Industria</span>
           <span>12 min lectura</span>
+          <span class="read-count" aria-label="Lecturas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span id="read-count-value">—</span>
+          </span>
         </div>
         <h1 class="article-title">Más allá del arancel: La reconversión estratégica y la <em>seguridad nacional</em> en Acerías Paz del Río</h1>
         <p class="article-lead">La expiración de las medidas arancelarias expuso a la única siderúrgica integrada de Colombia a una competencia desigual. Pero el debate no es solo comercial: es una cuestión de soberanía industrial. Lecciones de SSAB, Voestalpine y Nucor para transformar un activo estratégico en proveedor de la infraestructura que el país necesita.</p>
@@ -607,5 +619,28 @@
     <span>Gestión estratégica con propósito.</span>
     <a href="#main">Volver arriba ↑</a>
   </footer>
+
+  <!-- Read counter (CountAPI) -->
+  <script>
+    (function() {
+      var counterEl = document.getElementById('read-count-value');
+      if (!counterEl) return;
+      
+      var namespace = 'mauriciopineda-blog';
+      var key = 'acerias-paz-del-rio';
+      var url = 'https://api.countapi.xyz/hit/' + namespace + '/' + key;
+      
+      fetch(url)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data && typeof data.value === 'number') {
+            counterEl.textContent = data.value.toLocaleString() + ' lecturas';
+          }
+        })
+        .catch(function() {
+          counterEl.textContent = '—';
+        });
+    })();
+  </script>
 </body>
 </html>
